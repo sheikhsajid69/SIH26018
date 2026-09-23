@@ -360,7 +360,7 @@ SIH26018/
 
 * **Problem Statement**: SIH26018 — Smart Automation
 * **Team**: Void
-* **Lead Architect & Developer**: [sheikhsajid69](https://github.com/sheikhsajid69)
+* **Lead Architect & Developer**: [sheikhsajid69](https://sheikhsajid69.qzz.io)
 * **Hackathon**: Smart India Hackathon 2026
 
 ---
