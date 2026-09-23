@@ -46,67 +46,29 @@ class LocalEvidenceStore:
 
 
 class MockDocumentProvider:
-    """
-    Deterministic substitute for OCR and document extraction.
-    Advertises itself as a mock at every boundary (Rules 1 & 12).
-    """
+    """Deterministic substitute for OCR and document extraction."""
 
     provider = "mock-document-ai"
     model_version = "demo-1.2"
 
     def extract(self) -> Extraction:
+        raw_fields = [
+            ("owner", "Ramesh Kumar", "ramesh kumar", 0.97, "page 1, block A, line 2"),
+            ("survey_number", "124/2", "124/2", 0.99, "page 1, schedule section, row 3"),
+            ("plot_number", "18B", "18b", 0.94, "page 1, schedule section, row 4"),
+            ("area", "2.31 acre", "2.31 acre", 0.88, "page 1, schedule property extent, row 6"),
+            ("village", "Sampurna", "sampurna", 0.95, "page 1, property address, row 8"),
+            ("land_use", "Agricultural", "agricultural", 0.92, "page 2, recital clause 4"),
+        ]
         return Extraction(
             provider=self.provider,
             model_version=self.model_version,
             fields=[
                 ExtractedField(
-                    field_name="owner",
-                    extracted_value="Ramesh Kumar",
-                    normalized_value="ramesh kumar",
-                    confidence=0.97,
-                    source_location="page 1, block A, line 2",
-                    extraction_method="MOCK_OCR_NER",
-                ),
-                ExtractedField(
-                    field_name="survey_number",
-                    extracted_value="124/2",
-                    normalized_value="124/2",
-                    confidence=0.99,
-                    source_location="page 1, schedule section, row 3",
-                    extraction_method="MOCK_OCR_NER",
-                ),
-                ExtractedField(
-                    field_name="plot_number",
-                    extracted_value="18B",
-                    normalized_value="18b",
-                    confidence=0.94,
-                    source_location="page 1, schedule section, row 4",
-                    extraction_method="MOCK_OCR_NER",
-                ),
-                ExtractedField(
-                    field_name="area",
-                    extracted_value="2.31 acre",
-                    normalized_value="2.31 acre",
-                    confidence=0.88,
-                    source_location="page 1, schedule property extent, row 6",
-                    extraction_method="MOCK_OCR_NER",
-                ),
-                ExtractedField(
-                    field_name="village",
-                    extracted_value="Sampurna",
-                    normalized_value="sampurna",
-                    confidence=0.95,
-                    source_location="page 1, property address, row 8",
-                    extraction_method="MOCK_OCR_NER",
-                ),
-                ExtractedField(
-                    field_name="land_use",
-                    extracted_value="Agricultural",
-                    normalized_value="agricultural",
-                    confidence=0.92,
-                    source_location="page 2, recital clause 4",
-                    extraction_method="MOCK_OCR_NER",
-                ),
+                    field_name=f[0], extracted_value=f[1], normalized_value=f[2],
+                    confidence=f[3], source_location=f[4], extraction_method="MOCK_OCR_NER",
+                )
+                for f in raw_fields
             ],
         )
 

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from typing import Protocol
 from pydantic import BaseModel, Field
 
 
@@ -22,13 +21,6 @@ class BlueprintAnalysis(BaseModel):
     spatial_consistency_status: str
     area_estimate_sqm: float
     advisory_disclaimer: str
-
-
-class BlueprintProvider(Protocol):
-    """Protocol boundary for blueprint and sketch computer vision providers."""
-
-    def analyze(self, file_name: str, body: bytes) -> BlueprintAnalysis:
-        ...
 
 
 class MockBlueprintProvider:

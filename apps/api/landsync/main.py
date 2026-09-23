@@ -74,23 +74,17 @@ review_cases: dict[str, ReviewCase] = {
     ),
 }
 
-# Dynamically load synthetic review cases from data/synthetic/review_cases.json if available
 cases_file = Path(__file__).resolve().parents[3] / "data" / "synthetic" / "review_cases.json"
 if cases_file.exists():
-    try:
-        raw_cases = json.loads(cases_file.read_text(encoding="utf-8"))
-        for rc in raw_cases:
-            cid = rc["review_case_id"]
-            review_cases[cid] = ReviewCase(
-                id=cid,
-                parcel_id=rc["parcel_id"],
-                reason=rc["reason"],
-                severity="HIGH" if rc["priority"] == "P1_HIGH" else "MEDIUM",
-                priority=rc["priority"],
-                status=rc["status"],
-            )
-    except Exception:
-        pass
+    for rc in json.loads(cases_file.read_text(encoding="utf-8")):
+        review_cases[rc["review_case_id"]] = ReviewCase(
+            id=rc["review_case_id"],
+            parcel_id=rc["parcel_id"],
+            reason=rc["reason"],
+            severity="HIGH" if rc.get("priority") == "P1_HIGH" else "MEDIUM",
+            priority=rc.get("priority", "P2_NORMAL"),
+            status=rc.get("status", "OPEN"),
+        )
 
 TOKENS = {
     "demo-citizen": ("demo-citizen", Role.CITIZEN),

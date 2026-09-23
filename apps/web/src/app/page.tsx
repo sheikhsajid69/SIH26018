@@ -1401,90 +1401,29 @@ export default function Home() {
             </div>
 
             <div className="report-body">
-              <div
-                style={{
-                  background: "#fffbeb",
-                  border: "1px solid #fef3c7",
-                  padding: "12px",
-                  borderRadius: "6px",
-                  fontSize: "11px",
-                  color: "#92400e",
-                  marginBottom: "20px"
-                }}
-              >
-                <b>LEGAL NOTICE:</b> This report is an AI-assisted consistency evaluation generated for demonstration
-                purposes. It does <b>NOT</b> establish legal ownership, convey title, or supersede authoritative revenue
-                records.
+              <div className="badge-synthetic" style={{ width: "100%", justifyContent: "center", padding: "8px", marginBottom: "16px" }}>
+                SYNTHETIC DEMO REPORT · ADVISORY ONLY · NOT A LEGAL TITLE CERTIFICATE
               </div>
 
               <div className="report-card">
-                <h3>1. Parcel Identification Particulars</h3>
-                <p>
-                  <b>ULPIN:</b> {scenario.ulpin} &nbsp;|&nbsp; <b>Survey No:</b> {scenario.survey_number} &nbsp;|&nbsp;{" "}
-                  <b>Plot:</b> {scenario.plot_number}
-                </p>
-                <p>
-                  <b>Location:</b> {scenario.village}, {scenario.taluk}, {scenario.district} ({scenario.state})
-                </p>
-                <p>
-                  <b>Recorded Extent:</b> {scenario.area} ({scenario.normalized_area_sqm.toLocaleString()} m²) &nbsp;|&nbsp;{" "}
-                  <b>Land Use:</b> {scenario.land_use}
-                </p>
-              </div>
-
-              <div className="report-card">
-                <h3>2. Discrepancy & Validation Summary</h3>
-                <p>
-                  <b>Scenario Evaluated:</b> {scenario.scenario}
-                </p>
-                <p>
-                  <b>Status:</b>{" "}
-                  <span
-                    style={{
-                      color: isConsistent ? "#166534" : "#c66a12",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    {isConsistent ? "CONSISTENT / MATCH" : "REVIEW_REQUIRED"}
-                  </span>
-                </p>
-                <p>
-                  <b>Findings:</b> {scenario.reason}
-                </p>
-              </div>
-
-              <div className="report-card">
-                <h3>3. Provenance & Evidence Hashes</h3>
-                <p>
-                  <b>Primary Document:</b> {scenario.doc_name}
-                </p>
-                <p style={{ fontFamily: "monospace", fontSize: "11px" }}>
-                  SHA-256: f8c238346ffe3a51d5124e09056fe5b310b36e44d667566952b7b5e3a66dfb8b
-                </p>
-                <p>
-                  <b>Extraction Provider:</b> mock-document-ai v1.2 (Confidence: {Math.round(scenario.confidence * 100)}%)
-                </p>
-              </div>
-
-              <div className="report-card">
-                <h3>4. Officer Review Finding</h3>
-                <p>
-                  <b>Resolution:</b> {resolutionChoice}
-                </p>
-                <p>
-                  <b>Officer Notes:</b> {officerNote}
-                </p>
-                <p>
-                  <b>Reviewer:</b> demo-officer (Revenue Inspector / Taluk Revenue Office)
-                </p>
+                <h3>Executive Evaluation Summary</h3>
+                <dl className="details" style={{ padding: 0 }}>
+                  <div><dt>Parcel / ULPIN</dt><dd>{scenario.survey_number} (Plot {scenario.plot_number}) <small>{scenario.ulpin}</small></dd></div>
+                  <div><dt>Location</dt><dd>{scenario.village}, {scenario.district} ({scenario.state})</dd></div>
+                  <div><dt>Extent Evaluated</dt><dd>{scenario.area} ({scenario.normalized_area_sqm.toLocaleString()} m²) <small>vs {scenario.doc_area}</small></dd></div>
+                  <div><dt>Consistency Verdict</dt><dd><span className={isConsistent ? "match" : "mismatch"}>{isConsistent ? "CONSISTENT" : "REVIEW_REQUIRED"}</span></dd></div>
+                  <div><dt>Key Finding</dt><dd>{scenario.reason}</dd></div>
+                  <div><dt>Evidence Hash</dt><dd><code style={{ fontSize: "11px" }}>SHA-256: f8c238346ffe3a51d5124e09056fe5b310b36e44d667566952b7b5e3a66dfb8b</code></dd></div>
+                  <div><dt>Officer Decision</dt><dd>{resolutionChoice} <small>— {officerNote}</small></dd></div>
+                </dl>
               </div>
 
               <button
                 className="upload-button"
-                style={{ width: "100%", justifyContent: "center", marginTop: "10px" }}
+                style={{ width: "100%", justifyContent: "center", marginTop: "12px" }}
                 onClick={() => window.print()}
               >
-                <Icon name="printer" size={16} /> Print Official Advisory Report
+                <Icon name="printer" size={16} /> Print Advisory Land Profile Report
               </button>
             </div>
           </div>
