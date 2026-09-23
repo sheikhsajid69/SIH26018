@@ -1,6 +1,62 @@
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Testing & Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# Next.js Build Output
 .next/
+out/
+build/
+dist/
+
+# Python & Virtual Environments
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Evidentiary Vault Local Storage & Environment
 .landsync-storage/
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs & Temporary Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

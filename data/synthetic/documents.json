@@ -1,0 +1,268 @@
+[
+  {
+    "document_id": "SYN-DOC-001",
+    "parcel_id": "SYN-PARCEL-001",
+    "document_type": "Record of Rights (RTC)",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_record_of_rights_(rtc)_syn-parcel-001.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Record of Rights (RTC) for parcel SYN-PARCEL-001 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000001",
+      "storage_key": "documents/demo/SYN-PARCEL-001/SYN-HASH-000001/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-002",
+    "parcel_id": "SYN-PARCEL-002",
+    "document_type": "Registered Sale Deed",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_registered_sale_deed_syn-parcel-002.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Registered Sale Deed for parcel SYN-PARCEL-002 in Sampurna Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000002",
+      "storage_key": "documents/demo/SYN-PARCEL-002/SYN-HASH-000002/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-003",
+    "parcel_id": "SYN-PARCEL-003",
+    "document_type": "Sale Deed",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_sale_deed_syn-parcel-003.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Sale Deed for parcel SYN-PARCEL-003 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000003",
+      "storage_key": "documents/demo/SYN-PARCEL-003/SYN-HASH-000003/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-004",
+    "parcel_id": "SYN-PARCEL-004",
+    "document_type": "Partition Deed",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_partition_deed_syn-parcel-004.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Partition Deed for parcel SYN-PARCEL-004 in Greenfield Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000004",
+      "storage_key": "documents/demo/SYN-PARCEL-004/SYN-HASH-000004/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-005",
+    "parcel_id": "SYN-PARCEL-005",
+    "document_type": "Faded Settlement Extract",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_faded_settlement_extract_syn-parcel-005.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Faded Settlement Extract for parcel SYN-PARCEL-005 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000005",
+      "storage_key": "documents/demo/SYN-PARCEL-005/SYN-HASH-000005/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-006",
+    "parcel_id": "SYN-PARCEL-006",
+    "document_type": "Faded Certified Copy",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_faded_certified_copy_syn-parcel-006.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Faded Certified Copy for parcel SYN-PARCEL-006 in Adarsh Nagar",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000006",
+      "storage_key": "documents/demo/SYN-PARCEL-006/SYN-HASH-000006/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-007",
+    "parcel_id": "SYN-PARCEL-007",
+    "document_type": "Sale Deed",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_sale_deed_syn-parcel-007.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Sale Deed for parcel SYN-PARCEL-007 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000007",
+      "storage_key": "documents/demo/SYN-PARCEL-007/SYN-HASH-000007/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-008",
+    "parcel_id": "SYN-PARCEL-008",
+    "document_type": "Land Cadastral Sketch Blueprint",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_land_cadastral_sketch_blueprint_syn-parcel-008.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Land Cadastral Sketch Blueprint for parcel SYN-PARCEL-008 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000008",
+      "storage_key": "documents/demo/SYN-PARCEL-008/SYN-HASH-000008/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-009",
+    "parcel_id": "SYN-PARCEL-009",
+    "document_type": "Multi-Document Bundle",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_multi-document_bundle_syn-parcel-009.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Multi-Document Bundle for parcel SYN-PARCEL-009 in Vikas Nagar",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000009",
+      "storage_key": "documents/demo/SYN-PARCEL-009/SYN-HASH-000009/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-010",
+    "parcel_id": "SYN-PARCEL-010",
+    "document_type": "Registered Gift Deed",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_registered_gift_deed_syn-parcel-010.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Registered Gift Deed for parcel SYN-PARCEL-010 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000010",
+      "storage_key": "documents/demo/SYN-PARCEL-010/SYN-HASH-000010/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-011",
+    "parcel_id": "SYN-PARCEL-011",
+    "document_type": "Sale Deed (Duplicate Upload)",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_sale_deed_(duplicate_upload)_syn-parcel-011.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Sale Deed (Duplicate Upload) for parcel SYN-PARCEL-011 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000011",
+      "storage_key": "documents/demo/SYN-PARCEL-011/SYN-HASH-000011/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-012",
+    "parcel_id": "SYN-PARCEL-012",
+    "document_type": "Old Revenue Extract",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_old_revenue_extract_syn-parcel-012.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Old Revenue Extract for parcel SYN-PARCEL-012 in Demo Hamlet",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000012",
+      "storage_key": "documents/demo/SYN-PARCEL-012/SYN-HASH-000012/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-013",
+    "parcel_id": "SYN-PARCEL-013",
+    "document_type": "Family Settlement Deed",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_family_settlement_deed_syn-parcel-013.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Family Settlement Deed for parcel SYN-PARCEL-013 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000013",
+      "storage_key": "documents/demo/SYN-PARCEL-013/SYN-HASH-000013/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-014",
+    "parcel_id": "SYN-PARCEL-014",
+    "document_type": "Commercial Lease / Sale Deed",
+    "document_version": 1,
+    "issue_date": "2018-03-24",
+    "source": "USER_UPLOAD",
+    "synthetic_filename": "synthetic_commercial_lease___sale_deed_syn-parcel-014.txt",
+    "document_status": "PROCESSED_MOCK",
+    "content_summary": "Commercial Lease / Sale Deed for parcel SYN-PARCEL-014 in Sample Village",
+    "provenance": {
+      "source_type": "DIGITIZED_OFFICIAL_EVIDENCE (MOCK)",
+      "uploaded_by": "SYN-USER-CITIZEN-001",
+      "uploaded_at": "2026-09-23T10:00:00Z",
+      "sha256": "SYN-HASH-000014",
+      "storage_key": "documents/demo/SYN-PARCEL-014/SYN-HASH-000014/1/original"
+    },
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  }
+]

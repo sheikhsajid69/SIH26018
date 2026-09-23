@@ -1,0 +1,562 @@
+[
+  {
+    "parcel_id": "SYN-PARCEL-001",
+    "document_id": "SYN-DOC-001",
+    "overall_status": "MATCH",
+    "confidence": 0.98,
+    "scenario": "MATCH (Fully Consistent)",
+    "review_required": false,
+    "explanation": "Consistent record across deed and authority extract.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Arjun Rao",
+        "authority_value": "Arjun Rao",
+        "result": "MATCH",
+        "confidence": 0.98
+      },
+      {
+        "field": "survey_number",
+        "document_value": "101/1",
+        "authority_value": "101/1",
+        "result": "MATCH",
+        "confidence": 0.98
+      },
+      {
+        "field": "area",
+        "document_value": "2.40 acre",
+        "authority_value": "2.40 acre",
+        "result": "MATCH",
+        "confidence": 0.98
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-002",
+    "document_id": "SYN-DOC-002",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.88,
+    "scenario": "AREA_MISMATCH",
+    "review_required": true,
+    "explanation": "Area variance of 0.09 acre (~364 m\u00b2) detected between deed and authority record.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Ramesh Kumar",
+        "authority_value": "Ramesh Kumar",
+        "result": "MATCH",
+        "confidence": 0.88
+      },
+      {
+        "field": "survey_number",
+        "document_value": "124/2",
+        "authority_value": "124/2",
+        "result": "MATCH",
+        "confidence": 0.88
+      },
+      {
+        "field": "area",
+        "document_value": "2.31 acre",
+        "authority_value": "2.40 acre",
+        "result": "MISMATCH",
+        "confidence": 0.88
+      },
+      {
+        "field": "village",
+        "document_value": "Sampurna Village",
+        "authority_value": "Sampurna Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-003",
+    "document_id": "SYN-DOC-003",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.96,
+    "scenario": "OWNER_MISMATCH",
+    "review_required": true,
+    "explanation": "Holder name differs between submitted deed ('Meera Nair') and authority extract ('Meera Rao').",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Meera Nair",
+        "authority_value": "Meera Rao",
+        "result": "MISMATCH",
+        "confidence": 0.96
+      },
+      {
+        "field": "survey_number",
+        "document_value": "158/4",
+        "authority_value": "158/4",
+        "result": "MATCH",
+        "confidence": 0.96
+      },
+      {
+        "field": "area",
+        "document_value": "1.85 acre",
+        "authority_value": "1.85 acre",
+        "result": "MATCH",
+        "confidence": 0.96
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-004",
+    "document_id": "SYN-DOC-004",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.97,
+    "scenario": "SURVEY_NUMBER_MISMATCH",
+    "review_required": true,
+    "explanation": "Survey number discrepancy: Deed cites '204/3' while authority record specifies '204/8'.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Kiran Shetty",
+        "authority_value": "Kiran Shetty",
+        "result": "MATCH",
+        "confidence": 0.97
+      },
+      {
+        "field": "survey_number",
+        "document_value": "204/3",
+        "authority_value": "204/8",
+        "result": "MISMATCH",
+        "confidence": 0.97
+      },
+      {
+        "field": "area",
+        "document_value": "3.10 acre",
+        "authority_value": "3.10 acre",
+        "result": "MATCH",
+        "confidence": 0.97
+      },
+      {
+        "field": "village",
+        "document_value": "Greenfield Village",
+        "authority_value": "Greenfield Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-005",
+    "document_id": "SYN-DOC-005",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.85,
+    "scenario": "MISSING_FIELD",
+    "review_required": true,
+    "explanation": "Essential extent attribute missing from uploaded document extraction.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Ananya Iyer",
+        "authority_value": "Ananya Iyer",
+        "result": "MATCH",
+        "confidence": 0.85
+      },
+      {
+        "field": "survey_number",
+        "document_value": "77/1",
+        "authority_value": "77/1",
+        "result": "MATCH",
+        "confidence": 0.85
+      },
+      {
+        "field": "area",
+        "document_value": "NOT_AVAILABLE",
+        "authority_value": "1.25 acre",
+        "result": "MISSING",
+        "confidence": 0.85
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-006",
+    "document_id": "SYN-DOC-006",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.51,
+    "scenario": "LOW_CONFIDENCE_EXTRACTION",
+    "review_required": true,
+    "explanation": "Extraction confidence of 51% falls below the 80% automated validation threshold.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Rohan Kulkarni",
+        "authority_value": "Rohan Kulkarni",
+        "result": "MATCH",
+        "confidence": 0.51
+      },
+      {
+        "field": "survey_number",
+        "document_value": "318/?",
+        "authority_value": "318/2",
+        "result": "MISMATCH",
+        "confidence": 0.51
+      },
+      {
+        "field": "area",
+        "document_value": "4.20 acre",
+        "authority_value": "4.20 acre",
+        "result": "MATCH",
+        "confidence": 0.51
+      },
+      {
+        "field": "village",
+        "document_value": "Adarsh Nagar",
+        "authority_value": "Adarsh Nagar",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-007",
+    "document_id": "SYN-DOC-007",
+    "overall_status": "PARTIAL_MATCH",
+    "confidence": 0.94,
+    "scenario": "PARTIAL_MATCH",
+    "review_required": false,
+    "explanation": "Partial match on holder name: parentage honorific present in submitted deed.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Vikram Sharma S/o Devendra Sharma",
+        "authority_value": "Vikram Sharma",
+        "result": "PARTIAL_MATCH",
+        "confidence": 0.94
+      },
+      {
+        "field": "survey_number",
+        "document_value": "89/1A",
+        "authority_value": "89/1A",
+        "result": "MATCH",
+        "confidence": 0.94
+      },
+      {
+        "field": "area",
+        "document_value": "0.95 acre",
+        "authority_value": "0.95 acre",
+        "result": "MATCH",
+        "confidence": 0.94
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-008",
+    "document_id": "SYN-DOC-008",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.86,
+    "scenario": "BOUNDARY_SPATIAL_REVIEW",
+    "review_required": true,
+    "explanation": "Spatial discrepancy: Sketch boundary detects 7.8m variance along eastern edge.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Sneha Patil",
+        "authority_value": "Sneha Patil",
+        "result": "MATCH",
+        "confidence": 0.86
+      },
+      {
+        "field": "survey_number",
+        "document_value": "112/5",
+        "authority_value": "112/5",
+        "result": "MATCH",
+        "confidence": 0.86
+      },
+      {
+        "field": "area",
+        "document_value": "2.00 acre",
+        "authority_value": "2.00 acre",
+        "result": "MATCH",
+        "confidence": 0.86
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-009",
+    "document_id": "SYN-DOC-009",
+    "overall_status": "MATCH",
+    "confidence": 0.97,
+    "scenario": "MULTIPLE_DOCUMENTS",
+    "review_required": false,
+    "explanation": "All 4 cross-document evidences confirm consistent title extent and geometry.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Rajesh Gowda",
+        "authority_value": "Rajesh Gowda",
+        "result": "MATCH",
+        "confidence": 0.97
+      },
+      {
+        "field": "survey_number",
+        "document_value": "64/3",
+        "authority_value": "64/3",
+        "result": "MATCH",
+        "confidence": 0.97
+      },
+      {
+        "field": "area",
+        "document_value": "3.50 acre",
+        "authority_value": "3.50 acre",
+        "result": "MATCH",
+        "confidence": 0.97
+      },
+      {
+        "field": "village",
+        "document_value": "Vikas Nagar",
+        "authority_value": "Vikas Nagar",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-010",
+    "document_id": "SYN-DOC-010",
+    "overall_status": "MATCH",
+    "confidence": 0.98,
+    "scenario": "MUTATION_HISTORY",
+    "review_required": false,
+    "explanation": "Deed matches latest sanctioned mutation entry MR-89/2024.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Divya Menon",
+        "authority_value": "Divya Menon",
+        "result": "MATCH",
+        "confidence": 0.98
+      },
+      {
+        "field": "survey_number",
+        "document_value": "140/2",
+        "authority_value": "140/2",
+        "result": "MATCH",
+        "confidence": 0.98
+      },
+      {
+        "field": "area",
+        "document_value": "2.75 acre",
+        "authority_value": "2.75 acre",
+        "result": "MATCH",
+        "confidence": 0.98
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-011",
+    "document_id": "SYN-DOC-011",
+    "overall_status": "MATCH",
+    "confidence": 0.99,
+    "scenario": "DUPLICATE_DOCUMENT",
+    "review_required": false,
+    "explanation": "Duplicate file upload detected via SHA-256 integrity match.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Suresh Deshmukh",
+        "authority_value": "Suresh Deshmukh",
+        "result": "MATCH",
+        "confidence": 0.99
+      },
+      {
+        "field": "survey_number",
+        "document_value": "99/1",
+        "authority_value": "99/1",
+        "result": "MATCH",
+        "confidence": 0.99
+      },
+      {
+        "field": "area",
+        "document_value": "1.50 acre",
+        "authority_value": "1.50 acre",
+        "result": "MATCH",
+        "confidence": 0.99
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-012",
+    "document_id": "SYN-DOC-012",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.91,
+    "scenario": "AMBIGUOUS_LAND_UNIT",
+    "review_required": true,
+    "explanation": "Regional unit 'bigha' lacks state-level metric schedule. Automated conversion blocked.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Kavita Reddy",
+        "authority_value": "Kavita Reddy",
+        "result": "MATCH",
+        "confidence": 0.91
+      },
+      {
+        "field": "survey_number",
+        "document_value": "215/6",
+        "authority_value": "215/6",
+        "result": "MATCH",
+        "confidence": 0.91
+      },
+      {
+        "field": "area",
+        "document_value": "2.5 local bigha",
+        "authority_value": "1.80 acre",
+        "result": "MISMATCH",
+        "confidence": 0.91
+      },
+      {
+        "field": "village",
+        "document_value": "Demo Hamlet",
+        "authority_value": "Demo Hamlet",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-013",
+    "document_id": "SYN-DOC-013",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.93,
+    "scenario": "CO_OWNERSHIP_DISCREPANCY",
+    "review_required": true,
+    "explanation": "Undivided joint share claim in deed vs sole khatedar in revenue register.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Amit Joshi & Sumit Joshi (Co-parceners)",
+        "authority_value": "Amit Joshi",
+        "result": "MISMATCH",
+        "confidence": 0.93
+      },
+      {
+        "field": "survey_number",
+        "document_value": "52/1",
+        "authority_value": "52/1",
+        "result": "MATCH",
+        "confidence": 0.93
+      },
+      {
+        "field": "area",
+        "document_value": "2.10 acre",
+        "authority_value": "2.10 acre",
+        "result": "MATCH",
+        "confidence": 0.93
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-014",
+    "document_id": "SYN-DOC-014",
+    "overall_status": "REVIEW_REQUIRED",
+    "confidence": 0.95,
+    "scenario": "LAND_USE_MISMATCH",
+    "review_required": true,
+    "explanation": "Unsanctioned land conversion: Deed claims Commercial use without DC NA conversion order.",
+    "fields": [
+      {
+        "field": "owner",
+        "document_value": "Priya Swaminathan",
+        "authority_value": "Priya Swaminathan",
+        "result": "MATCH",
+        "confidence": 0.95
+      },
+      {
+        "field": "survey_number",
+        "document_value": "180/7",
+        "authority_value": "180/7",
+        "result": "MATCH",
+        "confidence": 0.95
+      },
+      {
+        "field": "area",
+        "document_value": "1.10 acre",
+        "authority_value": "1.10 acre",
+        "result": "MATCH",
+        "confidence": 0.95
+      },
+      {
+        "field": "village",
+        "document_value": "Sample Village",
+        "authority_value": "Sample Village",
+        "result": "MATCH",
+        "confidence": 0.96
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  }
+]

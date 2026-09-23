@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: LAND CADASTRAL SKETCH BLUEPRINT
+DOCUMENT REF: SYN-DOC-008
+PARCEL IDENTIFIER: SYN-PARCEL-008 (ULPIN: SYN-ULPIN-KA-000008)
+JURISDICTION: Sample Village, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 112/5
+Plot Number: 9
+Recorded Holder: Sneha Patil
+Extent / Area: 2.00 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: BOUNDARY_SPATIAL_REVIEW
+Rationale: Sketch CV detects 192.8m eastern edge vs 185.0m authoritative cadastral footprint.
+================================================================================

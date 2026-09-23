@@ -1,0 +1,35 @@
+[
+  {
+    "user_id": "SYN-USER-CITIZEN-001",
+    "name": "Arjun Rao (Synthetic Persona)",
+    "role": "citizen",
+    "demo_bearer_token": "demo-citizen",
+    "email": "demo.arjun001@example.invalid",
+    "phone": "+91-00000-00001",
+    "permitted_parcels": [
+      "SYN-PARCEL-001",
+      "SYN-PARCEL-002",
+      "demo-parcel"
+    ],
+    "status": "ACTIVE_SYNTHETIC"
+  },
+  {
+    "user_id": "SYN-USER-OFFICER-001",
+    "name": "S. K. Murthy (Synthetic Revenue Officer)",
+    "role": "revenue_officer",
+    "demo_bearer_token": "demo-officer",
+    "email": "demo.officer001@example.invalid",
+    "phone": "+91-00000-00002",
+    "jurisdiction": "Model Tehsil, Synthetic District",
+    "status": "ACTIVE_SYNTHETIC"
+  },
+  {
+    "user_id": "SYN-USER-ADMIN-001",
+    "name": "Platform Admin (Synthetic)",
+    "role": "administrator",
+    "demo_bearer_token": "demo-admin",
+    "email": "demo.admin001@example.invalid",
+    "phone": "+91-00000-00003",
+    "status": "ACTIVE_SYNTHETIC"
+  }
+]

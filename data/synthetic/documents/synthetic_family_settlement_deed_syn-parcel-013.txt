@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: FAMILY SETTLEMENT DEED
+DOCUMENT REF: SYN-DOC-013
+PARCEL IDENTIFIER: SYN-PARCEL-013 (ULPIN: SYN-ULPIN-KA-000013)
+JURISDICTION: Sample Village, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 52/1
+Plot Number: 2
+Recorded Holder: Amit Joshi & Sumit Joshi (Co-parceners)
+Extent / Area: 2.10 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: CO_OWNERSHIP_DISCREPANCY
+Rationale: Deed lists joint co-parceners (Amit & Sumit Joshi) while authority lists sole holder.
+================================================================================

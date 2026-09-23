@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: SALE DEED
+DOCUMENT REF: SYN-DOC-003
+PARCEL IDENTIFIER: SYN-PARCEL-003 (ULPIN: SYN-ULPIN-KA-000003)
+JURISDICTION: Sample Village, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 158/4
+Plot Number: 12C
+Recorded Holder: Meera Nair
+Extent / Area: 1.85 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: OWNER_MISMATCH
+Rationale: Document holder is Meera Nair, but authority states Meera Rao.
+================================================================================

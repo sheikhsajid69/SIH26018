@@ -1,0 +1,632 @@
+[
+  {
+    "document_id": "SYN-DOC-001",
+    "parcel_id": "SYN-PARCEL-001",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.98,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Arjun Rao",
+        "confidence": 0.98,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "101/1",
+        "confidence": 0.98,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "2.40 acre",
+        "confidence": 0.98,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-002",
+    "parcel_id": "SYN-PARCEL-002",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.88,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Ramesh Kumar",
+        "confidence": 0.88,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "124/2",
+        "confidence": 0.88,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "2.31 acre",
+        "confidence": 0.88,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sampurna Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-003",
+    "parcel_id": "SYN-PARCEL-003",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.96,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Meera Nair",
+        "confidence": 0.96,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "158/4",
+        "confidence": 0.96,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "1.85 acre",
+        "confidence": 0.96,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-004",
+    "parcel_id": "SYN-PARCEL-004",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.97,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Kiran Shetty",
+        "confidence": 0.97,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "204/3",
+        "confidence": 0.97,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "3.10 acre",
+        "confidence": 0.97,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Greenfield Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-005",
+    "parcel_id": "SYN-PARCEL-005",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.85,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Ananya Iyer",
+        "confidence": 0.85,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "77/1",
+        "confidence": 0.85,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "NOT_AVAILABLE",
+        "confidence": 0.85,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-006",
+    "parcel_id": "SYN-PARCEL-006",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.51,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Rohan Kulkarni",
+        "confidence": 0.51,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "318/?",
+        "confidence": 0.51,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "4.20 acre",
+        "confidence": 0.51,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Adarsh Nagar",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-007",
+    "parcel_id": "SYN-PARCEL-007",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.94,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Vikram Sharma S/o Devendra Sharma",
+        "confidence": 0.94,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "89/1A",
+        "confidence": 0.94,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "0.95 acre",
+        "confidence": 0.94,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-008",
+    "parcel_id": "SYN-PARCEL-008",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.86,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Sneha Patil",
+        "confidence": 0.86,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "112/5",
+        "confidence": 0.86,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "2.00 acre",
+        "confidence": 0.86,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-009",
+    "parcel_id": "SYN-PARCEL-009",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.97,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Rajesh Gowda",
+        "confidence": 0.97,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "64/3",
+        "confidence": 0.97,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "3.50 acre",
+        "confidence": 0.97,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Vikas Nagar",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-010",
+    "parcel_id": "SYN-PARCEL-010",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.98,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Divya Menon",
+        "confidence": 0.98,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "140/2",
+        "confidence": 0.98,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "2.75 acre",
+        "confidence": 0.98,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-011",
+    "parcel_id": "SYN-PARCEL-011",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.99,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Suresh Deshmukh",
+        "confidence": 0.99,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "99/1",
+        "confidence": 0.99,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "1.50 acre",
+        "confidence": 0.99,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-012",
+    "parcel_id": "SYN-PARCEL-012",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.91,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Kavita Reddy",
+        "confidence": 0.91,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "215/6",
+        "confidence": 0.91,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "2.5 local bigha",
+        "confidence": 0.91,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Demo Hamlet",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-013",
+    "parcel_id": "SYN-PARCEL-013",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.93,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Amit Joshi & Sumit Joshi (Co-parceners)",
+        "confidence": 0.93,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "52/1",
+        "confidence": 0.93,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "2.10 acre",
+        "confidence": 0.93,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Agricultural",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "document_id": "SYN-DOC-014",
+    "parcel_id": "SYN-PARCEL-014",
+    "provider": "MockDocumentProvider",
+    "provider_version": "demo-v1.2",
+    "confidence": 0.95,
+    "extracted_fields": [
+      {
+        "field_name": "owner",
+        "extracted_value": "Priya Swaminathan",
+        "confidence": 0.95,
+        "source_location": "page 1, line 7",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "survey_number",
+        "extracted_value": "180/7",
+        "confidence": 0.95,
+        "source_location": "page 1, line 5",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "area",
+        "extracted_value": "1.10 acre",
+        "confidence": 0.95,
+        "source_location": "page 1, line 8",
+        "review_state": "PENDING"
+      },
+      {
+        "field_name": "village",
+        "extracted_value": "Sample Village",
+        "confidence": 0.96,
+        "source_location": "page 1, line 4",
+        "review_state": "AUTO_ACCEPTED"
+      },
+      {
+        "field_name": "land_use",
+        "extracted_value": "Commercial (NA)",
+        "confidence": 0.92,
+        "source_location": "page 1, line 9",
+        "review_state": "PENDING"
+      }
+    ],
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  }
+]

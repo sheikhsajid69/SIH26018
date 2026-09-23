@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: OLD REVENUE EXTRACT
+DOCUMENT REF: SYN-DOC-012
+PARCEL IDENTIFIER: SYN-PARCEL-012 (ULPIN: SYN-ULPIN-KA-000012)
+JURISDICTION: Demo Hamlet, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 215/6
+Plot Number: 8
+Recorded Holder: Kavita Reddy
+Extent / Area: 2.5 local bigha
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: AMBIGUOUS_LAND_UNIT
+Rationale: Deed specifies '2.5 local bigha'; Rule 13 prohibits automated conversion.
+================================================================================

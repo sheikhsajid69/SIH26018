@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: COMMERCIAL LEASE / SALE DEED
+DOCUMENT REF: SYN-DOC-014
+PARCEL IDENTIFIER: SYN-PARCEL-014 (ULPIN: SYN-ULPIN-KA-000014)
+JURISDICTION: Sample Village, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 180/7
+Plot Number: 15
+Recorded Holder: Priya Swaminathan
+Extent / Area: 1.10 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: LAND_USE_MISMATCH
+Rationale: Deed asserts Commercial/Industrial Non-Agricultural (NA), but authority records Agricultural.
+================================================================================

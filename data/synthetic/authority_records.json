@@ -1,0 +1,632 @@
+[
+  {
+    "parcel_id": "SYN-PARCEL-001",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "101/1",
+    "plot_number": "4A",
+    "owner": "Arjun Rao",
+    "area": "2.40 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 9712.46,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5944,
+            12.9716
+          ],
+          [
+            77.595,
+            12.9716
+          ],
+          [
+            77.595,
+            12.9722
+          ],
+          [
+            77.5944,
+            12.9722
+          ],
+          [
+            77.5944,
+            12.9716
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-002",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "124/2",
+    "plot_number": "18B",
+    "owner": "Ramesh Kumar",
+    "area": "2.40 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 9712.46,
+    "village": "Sampurna Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5955,
+            12.9725
+          ],
+          [
+            77.5961,
+            12.9725
+          ],
+          [
+            77.5961,
+            12.9731
+          ],
+          [
+            77.5955,
+            12.9731
+          ],
+          [
+            77.5955,
+            12.9725
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-003",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "158/4",
+    "plot_number": "12C",
+    "owner": "Meera Rao",
+    "area": "1.85 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 7486.68,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5965,
+            12.9735
+          ],
+          [
+            77.5971,
+            12.9735
+          ],
+          [
+            77.5971,
+            12.9741
+          ],
+          [
+            77.5965,
+            12.9741
+          ],
+          [
+            77.5965,
+            12.9735
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-004",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "204/8",
+    "plot_number": "7",
+    "owner": "Kiran Shetty",
+    "area": "3.10 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 12545.25,
+    "village": "Greenfield Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5975,
+            12.9745
+          ],
+          [
+            77.5981,
+            12.9745
+          ],
+          [
+            77.5981,
+            12.9751
+          ],
+          [
+            77.5975,
+            12.9751
+          ],
+          [
+            77.5975,
+            12.9745
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-005",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "77/1",
+    "plot_number": "3",
+    "owner": "Ananya Iyer",
+    "area": "1.25 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 5058.57,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5985,
+            12.9755
+          ],
+          [
+            77.5991,
+            12.9755
+          ],
+          [
+            77.5991,
+            12.9761
+          ],
+          [
+            77.5985,
+            12.9761
+          ],
+          [
+            77.5985,
+            12.9755
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-006",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "318/2",
+    "plot_number": "14",
+    "owner": "Rohan Kulkarni",
+    "area": "4.20 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 16996.8,
+    "village": "Adarsh Nagar",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5995,
+            12.9765
+          ],
+          [
+            77.6001,
+            12.9765
+          ],
+          [
+            77.6001,
+            12.9771
+          ],
+          [
+            77.5995,
+            12.9771
+          ],
+          [
+            77.5995,
+            12.9765
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-007",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "89/1A",
+    "plot_number": "5",
+    "owner": "Vikram Sharma",
+    "area": "0.95 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 3844.51,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6005,
+            12.9775
+          ],
+          [
+            77.6011,
+            12.9775
+          ],
+          [
+            77.6011,
+            12.9781
+          ],
+          [
+            77.6005,
+            12.9781
+          ],
+          [
+            77.6005,
+            12.9775
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-008",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "112/5",
+    "plot_number": "9",
+    "owner": "Sneha Patil",
+    "area": "2.00 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 8093.71,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6015,
+            12.9785
+          ],
+          [
+            77.6021,
+            12.9785
+          ],
+          [
+            77.6021,
+            12.9791
+          ],
+          [
+            77.6015,
+            12.9791
+          ],
+          [
+            77.6015,
+            12.9785
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-009",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "64/3",
+    "plot_number": "21",
+    "owner": "Rajesh Gowda",
+    "area": "3.50 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 14164.0,
+    "village": "Vikas Nagar",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6025,
+            12.9795
+          ],
+          [
+            77.6031,
+            12.9795
+          ],
+          [
+            77.6031,
+            12.9801
+          ],
+          [
+            77.6025,
+            12.9801
+          ],
+          [
+            77.6025,
+            12.9795
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-010",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "140/2",
+    "plot_number": "11",
+    "owner": "Divya Menon",
+    "area": "2.75 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 11128.85,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6035,
+            12.9805
+          ],
+          [
+            77.6041,
+            12.9805
+          ],
+          [
+            77.6041,
+            12.9811
+          ],
+          [
+            77.6035,
+            12.9811
+          ],
+          [
+            77.6035,
+            12.9805
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-011",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "99/1",
+    "plot_number": "16",
+    "owner": "Suresh Deshmukh",
+    "area": "1.50 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 6070.28,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6045,
+            12.9815
+          ],
+          [
+            77.6051,
+            12.9815
+          ],
+          [
+            77.6051,
+            12.9821
+          ],
+          [
+            77.6045,
+            12.9821
+          ],
+          [
+            77.6045,
+            12.9815
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-012",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "215/6",
+    "plot_number": "8",
+    "owner": "Kavita Reddy",
+    "area": "1.80 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 7284.34,
+    "village": "Demo Hamlet",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6055,
+            12.9825
+          ],
+          [
+            77.6061,
+            12.9825
+          ],
+          [
+            77.6061,
+            12.9831
+          ],
+          [
+            77.6055,
+            12.9831
+          ],
+          [
+            77.6055,
+            12.9825
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-013",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "52/1",
+    "plot_number": "2",
+    "owner": "Amit Joshi",
+    "area": "2.10 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 8498.4,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6065,
+            12.9835
+          ],
+          [
+            77.6071,
+            12.9835
+          ],
+          [
+            77.6071,
+            12.9841
+          ],
+          [
+            77.6065,
+            12.9841
+          ],
+          [
+            77.6065,
+            12.9835
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "parcel_id": "SYN-PARCEL-014",
+    "source_type": "SYNTHETIC_AUTHORITY",
+    "source_name": "Demo Authority Adapter",
+    "source_status": "SYNTHETIC / NOT CONNECTED",
+    "survey_number": "180/7",
+    "plot_number": "15",
+    "owner": "Priya Swaminathan",
+    "area": "1.10 acre",
+    "area_unit": "acre",
+    "normalized_area_sqm": 4451.54,
+    "village": "Sample Village",
+    "land_use": "Agricultural",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6075,
+            12.9845
+          ],
+          [
+            77.6081,
+            12.9845
+          ],
+          [
+            77.6081,
+            12.9851
+          ],
+          [
+            77.6075,
+            12.9851
+          ],
+          [
+            77.6075,
+            12.9845
+          ]
+        ]
+      ]
+    },
+    "geometry_source": "SYNTHETIC DEMO PostGIS GeoJSON (EPSG:4326)",
+    "last_updated": "2026-01-15T00:00:00Z",
+    "source_version": "demo-v1.2",
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  }
+]

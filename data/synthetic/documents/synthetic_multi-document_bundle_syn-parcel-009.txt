@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: MULTI-DOCUMENT BUNDLE
+DOCUMENT REF: SYN-DOC-009
+PARCEL IDENTIFIER: SYN-PARCEL-009 (ULPIN: SYN-ULPIN-KA-000009)
+JURISDICTION: Vikas Nagar, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 64/3
+Plot Number: 21
+Recorded Holder: Rajesh Gowda
+Extent / Area: 3.50 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: MULTIPLE_DOCUMENTS
+Rationale: 4 associated documents: RoR, Sale Deed, FMB Survey Sketch, and Mutation Sanction.
+================================================================================

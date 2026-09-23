@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: PARTITION DEED
+DOCUMENT REF: SYN-DOC-004
+PARCEL IDENTIFIER: SYN-PARCEL-004 (ULPIN: SYN-ULPIN-KA-000004)
+JURISDICTION: Greenfield Village, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 204/3
+Plot Number: 7
+Recorded Holder: Kiran Shetty
+Extent / Area: 3.10 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: SURVEY_NUMBER_MISMATCH
+Rationale: Document reports survey 204/3 while authority states 204/8.
+================================================================================

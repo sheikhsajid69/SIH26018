@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: REGISTERED SALE DEED
+DOCUMENT REF: SYN-DOC-002
+PARCEL IDENTIFIER: SYN-PARCEL-002 (ULPIN: SYN-ULPIN-KA-000002)
+JURISDICTION: Sampurna Village, Model Tehsil, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 124/2
+Plot Number: 18B
+Recorded Holder: Ramesh Kumar
+Extent / Area: 2.31 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: AREA_MISMATCH
+Rationale: Document reports 2.31 acres while authority states 2.40 acres (0.09 acre variance).
+================================================================================

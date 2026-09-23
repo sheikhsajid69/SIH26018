@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ed64" />
+      <stop offset="100%" stop-color="#00684a" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001e2b" />
+      <stop offset="100%" stop-color="#003d4f" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded hexagon / shield -->
+  <rect width="32" height="32" rx="7" fill="url(#bgGrad)" />
+  
+  <!-- Cadastral Cadastre Grid Lines -->
+  <path d="M4 11h24M4 21h24M11 4v24M21 4v24" stroke="#1c2d38" stroke-width="0.8" opacity="0.6" />
+  
+  <!-- MongoDB Stylized Spatial Leaf / Land Polygon -->
+  <path d="M16 4 C11 10, 8 16, 12 24 C14 28, 16 28, 16 28 C16 28, 18 28, 20 24 C24 16, 21 10, 16 4 Z" fill="url(#leafGrad)" />
+  
+  <!-- Internal Central Spire / Cadastral Boundary Line -->
+  <path d="M16 7 L16 26" stroke="#001e2b" stroke-width="1.2" stroke-linecap="round" />
+  <circle cx="16" cy="14" r="1.5" fill="#ffffff" />
+</svg>

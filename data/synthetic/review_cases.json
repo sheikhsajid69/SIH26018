@@ -1,0 +1,173 @@
+[
+  {
+    "review_case_id": "SYN-CASE-002",
+    "parcel_id": "SYN-PARCEL-002",
+    "document_id": "SYN-DOC-002",
+    "reason": "Area variance of 0.09 acre (~364 m\u00b2) detected between deed and authority record.",
+    "priority": "P2_NORMAL",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-002",
+      "AUTH-EXTRACT-SYN-PARCEL-002"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-003",
+    "parcel_id": "SYN-PARCEL-003",
+    "document_id": "SYN-DOC-003",
+    "reason": "Holder name differs between submitted deed ('Meera Nair') and authority extract ('Meera Rao').",
+    "priority": "P1_HIGH",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-003",
+      "AUTH-EXTRACT-SYN-PARCEL-003"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-004",
+    "parcel_id": "SYN-PARCEL-004",
+    "document_id": "SYN-DOC-004",
+    "reason": "Survey number discrepancy: Deed cites '204/3' while authority record specifies '204/8'.",
+    "priority": "P1_HIGH",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-004",
+      "AUTH-EXTRACT-SYN-PARCEL-004"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-005",
+    "parcel_id": "SYN-PARCEL-005",
+    "document_id": "SYN-DOC-005",
+    "reason": "Essential extent attribute missing from uploaded document extraction.",
+    "priority": "P2_NORMAL",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-005",
+      "AUTH-EXTRACT-SYN-PARCEL-005"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-006",
+    "parcel_id": "SYN-PARCEL-006",
+    "document_id": "SYN-DOC-006",
+    "reason": "Extraction confidence of 51% falls below the 80% automated validation threshold.",
+    "priority": "P2_NORMAL",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-006",
+      "AUTH-EXTRACT-SYN-PARCEL-006"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-008",
+    "parcel_id": "SYN-PARCEL-008",
+    "document_id": "SYN-DOC-008",
+    "reason": "Spatial discrepancy: Sketch boundary detects 7.8m variance along eastern edge.",
+    "priority": "P2_NORMAL",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-008",
+      "AUTH-EXTRACT-SYN-PARCEL-008"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-012",
+    "parcel_id": "SYN-PARCEL-012",
+    "document_id": "SYN-DOC-012",
+    "reason": "Regional unit 'bigha' lacks state-level metric schedule. Automated conversion blocked.",
+    "priority": "P1_HIGH",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-012",
+      "AUTH-EXTRACT-SYN-PARCEL-012"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-013",
+    "parcel_id": "SYN-PARCEL-013",
+    "document_id": "SYN-DOC-013",
+    "reason": "Undivided joint share claim in deed vs sole khatedar in revenue register.",
+    "priority": "P2_NORMAL",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-013",
+      "AUTH-EXTRACT-SYN-PARCEL-013"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  },
+  {
+    "review_case_id": "SYN-CASE-014",
+    "parcel_id": "SYN-PARCEL-014",
+    "document_id": "SYN-DOC-014",
+    "reason": "Unsanctioned land conversion: Deed claims Commercial use without DC NA conversion order.",
+    "priority": "P1_HIGH",
+    "status": "OPEN",
+    "assigned_role": "revenue_officer",
+    "evidence_refs": [
+      "SYN-DOC-014",
+      "AUTH-EXTRACT-SYN-PARCEL-014"
+    ],
+    "recommended_action": "Inspect original physical deed register and order ground verification.",
+    "reviewer": "DECISION_PENDING",
+    "reviewer_note": "Awaiting officer examination in demonstration queue.",
+    "created_at": "2026-09-23T10:05:00Z",
+    "decision": null,
+    "disclaimer": "SYNTHETIC DEMO DATA \u2014 NOT A REAL GOVERNMENT RECORD \u2014 FOR LANDSYNC AI PROTOTYPE ONLY"
+  }
+]

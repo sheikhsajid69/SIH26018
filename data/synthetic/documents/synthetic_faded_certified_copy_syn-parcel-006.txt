@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: FADED CERTIFIED COPY
+DOCUMENT REF: SYN-DOC-006
+PARCEL IDENTIFIER: SYN-PARCEL-006 (ULPIN: SYN-ULPIN-KA-000006)
+JURISDICTION: Adarsh Nagar, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 318/?
+Plot Number: 14
+Recorded Holder: Rohan Kulkarni
+Extent / Area: 4.20 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: LOW_CONFIDENCE_EXTRACTION
+Rationale: Survey number extracted as 318/? with low confidence 0.51.
+================================================================================

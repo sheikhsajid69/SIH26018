@@ -1,0 +1,20 @@
+================================================================================
+SYNTHETIC DEMO DATA — NOT A REAL GOVERNMENT RECORD — FOR LANDSYNC AI PROTOTYPE ONLY
+================================================================================
+DOCUMENT TYPE: SALE DEED
+DOCUMENT REF: SYN-DOC-007
+PARCEL IDENTIFIER: SYN-PARCEL-007 (ULPIN: SYN-ULPIN-KA-000007)
+JURISDICTION: Sample Village, Demo Taluk, Synthetic District, Karnataka
+--------------------------------------------------------------------------------
+SCHEDULE PROPERTY PARTICULARS:
+Survey Number: 89/1A
+Plot Number: 5
+Recorded Holder: Vikram Sharma S/o Devendra Sharma
+Extent / Area: 0.95 acre
+Land Classification: Agricultural
+
+RECITAL / NOTES:
+This document is a synthetic demonstrator generated for LANDSYNC AI.
+Scenario: PARTIAL_MATCH
+Rationale: Name includes parentage 'Vikram Sharma S/o Devendra Sharma' matching 'Vikram Sharma'.
+================================================================================

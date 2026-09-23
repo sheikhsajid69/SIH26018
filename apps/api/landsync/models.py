@@ -78,8 +78,12 @@ class ReviewCase(BaseModel):
     id: str
     parcel_id: str
     reason: str
-    severity: str
+    severity: str = "MEDIUM"
     status: str = "OPEN"
+    priority: str = "P2_NORMAL"
+    discrepancy_field: str | None = None
+    claimed_value: str | None = None
+    authoritative_value: str | None = None
     assigned_officer: str | None = None
     reviewer_notes: str | None = None
     resolution: str | None = None
@@ -102,3 +106,58 @@ class AuditEvent(BaseModel):
 class ReviewDecision(BaseModel):
     resolution: str = Field(pattern="^(ACCEPTED_FOR_CORRECTION|REQUIRES_DOCUMENT|NO_ACTION)$")
     notes: str = Field(min_length=3, max_length=1000)
+
+
+class LandParcel(BaseModel):
+    id: str
+    ulpin: str
+    survey_number: str
+    plot_number: str
+    state: str
+    district: str
+    tehsil: str
+    village: str
+    area: str
+    normalized_area_sqm: float
+    land_use: str
+    geometry: dict[str, Any]
+    geometry_source: str
+    authoritative_source: str
+
+
+class OwnershipRelationship(BaseModel):
+    id: str
+    parcel_id: str
+    holder_name: str
+    share_extent: str
+    relationship_type: str  # e.g., "SOLE_PROPRIETOR", "CO_PARCENER", "LESSEE"
+    recorded_date: str
+    source_ref: str
+    is_synthetic: bool = True
+
+
+class MutationEvent(BaseModel):
+    id: str
+    parcel_id: str
+    mutation_number: str
+    event_type: str  # e.g., "PARTITION", "SUCCESSION", "SALE_TRANSFER", "DEMARCATION"
+    recorded_date: str
+    parties_involved: str
+    description: str
+    order_reference: str
+    is_synthetic: bool = True
+
+
+class ConsistencyReport(BaseModel):
+    title: str = "LANDSYNC AI Digital Land Profile & Consistency Report"
+    generated_at: datetime = Field(default_factory=now)
+    mode: str = "SYNTHETIC DEMO"
+    disclaimer: str = (
+        "ADVISORY NOTICE: This report is an AI-assisted consistency analysis generated for demonstration purposes. "
+        "It does NOT establish legal ownership, convey title, or supersede authoritative revenue records."
+    )
+    parcel: LandParcel
+    ownership: list[OwnershipRelationship]
+    validation_summary: list[ValidationResult]
+    review_case: ReviewCase
+    mutation_history: list[MutationEvent]

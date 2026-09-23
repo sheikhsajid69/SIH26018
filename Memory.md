@@ -14,6 +14,10 @@ LANDSYNC AI is an AI-assisted land-record intelligence, consistency-validation, 
 | Content-hash local store | Preserves evidence without trusting filename paths. | Production replaces it with versioned S3-compatible object storage. |
 | PostGIS migration is included before persistence adapter | Geometry needs a durable production contract. | API will adopt SQLAlchemy/SQLModel after migration runner and connection policy are added. |
 | Static demo bearer tokens | Allows the required demo roles without pretending to provide production authentication. | Replace with OIDC/JWT adapter before deployment. |
+| Unit normalization & Rule 13 defense | Land units (acres, ha, cents, gunthas, bighas) must be mathematically auditable; regional variations cannot be guessed. | Ambiguous units trigger `REVIEW_REQUIRED`; formula and original unit are always preserved. |
+| Blueprint CV provider boundary | Land deed sketches contain boundary lines and dimensions that need advisory edge detection. | `MockBlueprintProvider` models preliminary dimension extraction without claiming certified surveyor authority. |
+| Interactive multi-layer Cadastral GIS | Visualizing spatial discrepancy (0.09 acre delta) requires comparing authoritative PostGIS polygon with deed claim and blueprint overlay. | SVG/GeoJSON layer toggles allow judges/officers to see spatial boundary variance immediately. |
+| Role-based UI switcher | SIH demonstration must showcase Citizen, Revenue Officer, and Administrator journeys seamlessly. | Header role switcher alters API bearer tokens and exposes respective role dashboards. |
 
 ## Conventions
 
@@ -21,13 +25,22 @@ API paths use `/api/v1`; request/response contracts use Pydantic; timestamps are
 
 ## Completed Milestones
 
-- Phase 0 inventory: repository was empty, with Node/npm and Python available but no Docker binary detected and no existing implementation.
-- Phase 1 first vertical slice: FastAPI provider/adapter/storage/validation/RBAC foundation, tests, synthetic authority data, migration contract, and responsive Next.js dashboard are complete. The UI uploads to the API and records officer decisions; unavailable API calls fall back only to a clearly labelled local demo state.
+- Phase 0 inventory: repository layout, docs, runtime scripts.
+- Phase 1 architecture & domain: Core typed Pydantic models for `LandParcel`, `OwnershipRelationship`, `MutationEvent`, `ConsistencyReport`, `Document`, `ValidationResult`, `ReviewCase`, and `AuditEvent`.
+- Phase 2 database & PostGIS: Migration contract `001_initial.sql` defining spatial parcel geometry, evidence vault, and audit trail tables.
+- Phase 3 authentication & RBAC: Token-based role authorization (`demo-citizen`, `demo-officer`, `demo-admin`), strict endpoint guards, citizen decision block.
+- Phase 4 upload/storage: SHA-256 content-addressing, directory traversal defenses, immutable file storage in `.landsync-storage`.
+- Phase 5 & 6 document intelligence & blueprint: Swappable `MockDocumentProvider` (OCR/NER) and `MockBlueprintProvider` (sketch dimension & edge detection) with advisory disclaimers.
+- Phase 7 & 8 normalization & validation: Strict Indian unit engine (`units.py`), ambiguous unit defense (Rule 13), multi-field comparison (`MATCH`, `PARTIAL_MATCH`, `MISMATCH`, `MISSING`, `REVIEW_REQUIRED`), confidence weighting.
+- Phase 9, 10 & Admin dashboards: Next.js responsive interface with interactive role switcher, Discrepancy Queue, case resolution controls, and System Admin health console.
+- Phase 11 GIS spatial intelligence: Multi-layer Cadastral GIS visualizer with EPSG:4326 coordinates, scale bar, North arrow, and boundary delta overlay.
+- Phase 12 & 13 provenance, history & reports: Mutation timeline (`/parcels/{id}/history`), SHA-256 evidence tracking, printable Advisory Consistency Report modal.
+- Phase 16 automated testing: 15 automated test suites spanning unit normalizations, validation logic, RBAC security, upload integrity, and API contracts.
 
 ## Limitations, Questions, Debt, and Rejected Alternatives
 
-No real OCR, CV, government connector, persistent ORM, malware scanner, signed URLs, queue, migration runner, or MapLibre tile service is included. No geographic/legal claim may be inferred from the demo parcel. Confirm selected target state(s), legal authorization, retention policy, OIDC provider, source schema, CRS, data residency, and human-review policy before production. Rejected: hard-coding a state schema, calling demo data authoritative, using Aadhaar as a key, and allowing AI to approve title.
+No real OCR, CV, live government connector, persistent ORM, malware scanner, signed URLs, queue, or MapLibre vector tile server is included. No geographic/legal claim may be inferred from the demo parcel. Confirm selected target state(s), legal authorization, retention policy, OIDC provider, source schema, CRS, data residency, and human-review policy before production. Rejected: hard-coding a state schema, calling demo data authoritative, using Aadhaar as a key, and allowing AI to approve title.
 
 ## Next Work
 
-Add migration execution and SQLModel repository, explicit user-to-parcel authorization, production-grade auth/storage/scanning, controlled OCR/blueprint provider evaluation, PostGIS geometry checks, reports, queue/observability, and regional-language testing.
+Add migration runner execution and SQLModel repository, production-grade auth (Keycloak/OIDC), virus/malware scanning, real PaddleOCR/Tesseract evaluation, and multi-state adapter pilots.
