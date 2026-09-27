@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 from collections.abc import Generator
 from pathlib import Path
 from sqlalchemy import create_engine, text
@@ -10,13 +11,7 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 DEFAULT_SQLITE_PATH = Path(__file__).resolve().parents[3] / ".landsync-data.db"
 DEFAULT_DB_URL = f"sqlite:///{DEFAULT_SQLITE_PATH}"
 
-DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_DB_URL)
-
-# Normalize postgres:// to postgresql+psycopg:// if needed
-if DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+psycopg://", 1)
-elif DATABASE_URL.startswith("postgresql://") and not DATABASE_URL.startswith("postgresql+"):
-    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+psycopg://", 1)
+DATABASE_URL = re.sub(r"^postgres(ql)?://", "postgresql+psycopg://", os.getenv("DATABASE_URL", DEFAULT_DB_URL))
 
 # SQLite concurrency kwargs vs PostgreSQL pooling
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}

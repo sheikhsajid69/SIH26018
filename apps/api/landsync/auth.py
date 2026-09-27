@@ -2,13 +2,11 @@ from __future__ import annotations
 
 import os
 from datetime import datetime, timedelta, timezone
-from typing import Annotated, Protocol, runtime_checkable
-
-import jwt
-from fastapi import Depends, Header, HTTPException, status
-from passlib.context import CryptContext
+from typing import Annotated
 
 import bcrypt
+import jwt
+from fastapi import Depends, Header, HTTPException, status
 
 from landsync.models import Role
 

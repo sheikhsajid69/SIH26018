@@ -41,9 +41,12 @@ def polygon_area_sqm(coordinates: list[list[float]]) -> float:
 
 def bounding_box(coordinates: list[list[float]]) -> tuple[float, float, float, float]:
     """Return (min_lon, min_lat, max_lon, max_lat) for polygon coordinates."""
-    lons = [p[0] for p in coordinates]
-    lats = [p[1] for p in coordinates]
-    return min(lons), min(lats), max(lons), max(lats)
+    return (
+        min(p[0] for p in coordinates),
+        min(p[1] for p in coordinates),
+        max(p[0] for p in coordinates),
+        max(p[1] for p in coordinates),
+    )
 
 
 def bbox_iou(bbox_a: tuple[float, float, float, float], bbox_b: tuple[float, float, float, float]) -> float:

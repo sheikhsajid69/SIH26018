@@ -28,7 +28,7 @@ def admin_health(
     db_doc_count = db.query(DocumentOrm).count()
     open_cases = db.query(ReviewCaseOrm).filter(ReviewCaseOrm.status == "OPEN").count()
 
-    storage_root = getattr(storage, "root", "S3 / Object Store")
+    storage_root = storage.root
 
     return {
         "system": "LANDSYNC AI Core",

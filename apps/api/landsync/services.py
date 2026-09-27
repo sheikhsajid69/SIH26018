@@ -14,7 +14,7 @@ from landsync.models import (
 from landsync.units import normalize_land_unit, parse_area_string
 
 
-from landsync.storage import LocalEvidenceStorage, EvidenceStorageProvider
+from landsync.storage import LocalEvidenceStorage
 from landsync.extraction import (
     DocumentProvider,
     MockDocumentProvider,
@@ -31,7 +31,7 @@ def make_document(
     content_type: str,
     body: bytes,
     actor: str,
-    store: EvidenceStorageProvider | LocalEvidenceStore,
+    store: LocalEvidenceStorage,
     provider: DocumentProvider | None = None,
 ) -> Document:
     doc_provider = provider or get_document_provider()

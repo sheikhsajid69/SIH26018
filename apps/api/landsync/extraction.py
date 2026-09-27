@@ -5,26 +5,12 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Any, Protocol, runtime_checkable
+from typing import Any
 
 from landsync.models import ExtractedField, Extraction
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 SYNTHETIC_DIR = REPO_ROOT / "data" / "synthetic"
-
-
-@runtime_checkable
-class DocumentProvider(Protocol):
-    """Protocol for pluggable document extraction providers."""
-
-    def extract(
-        self,
-        file_name: str = "deed.pdf",
-        body: bytes = b"",
-        content_type: str = "application/pdf",
-        parcel_id: str | None = None,
-    ) -> Extraction:
-        ...
 
 
 class MockDocumentProvider:
@@ -154,10 +140,7 @@ class TextAndPdfDocumentProvider:
         if content_type == "application/pdf" or file_name.lower().endswith(".pdf"):
             text, page_count = self._extract_text_from_pdf(body)
         elif content_type.startswith("text/") or file_name.lower().endswith((".txt", ".csv")):
-            try:
-                text = body.decode("utf-8", errors="replace")
-            except Exception:
-                text = ""
+            text = body.decode("utf-8", errors="replace")
 
         # If no extractable text found, delegate to mock provider
         if not text.strip():
@@ -225,6 +208,10 @@ class TextAndPdfDocumentProvider:
             model_version=self.model_version,
             fields=fields,
         )
+
+
+# Union alias for provider types
+DocumentProvider = MockDocumentProvider | TextAndPdfDocumentProvider
 
 
 def get_document_provider() -> DocumentProvider:
