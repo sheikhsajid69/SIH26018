@@ -1,0 +1,17 @@
+{
+  "short_name": "LandSync AI",
+  "name": "LANDSYNC AI — Intelligent Land Record Digitalisation",
+  "description": "AI-assisted land record intelligence, multi-jurisdiction consistency validation, and spatial intelligence platform.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "32x32 48x48 72x72 96x96 128x128 256x256"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#001e2b",
+  "theme_color": "#00ed64",
+  "display": "standalone",
+  "orientation": "portrait"
+}

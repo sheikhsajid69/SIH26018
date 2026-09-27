@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Host: https://landsync.ai
+Sitemap: https://landsync.ai/sitemap.xml
