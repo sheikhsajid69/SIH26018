@@ -23,14 +23,21 @@ services:
   api:
     build: ./apps/api
     environment:
+      DATABASE_URL: postgresql+psycopg://landsync:landsync@db:5432/landsync
+      JWT_SECRET_KEY: landsync-ai-demo-secret-key-change-in-production-1234567890
       LOCAL_STORAGE_ROOT: /data
-      CORS_ORIGINS: http://localhost:3000
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
     ports: ["8000:8000"]
-    volumes: ["./.landsync-storage:/data"]
+    volumes:
+      - ./.landsync-storage:/data
+      - ./data/synthetic:/app/data/synthetic:ro
+      - ./scripts:/app/scripts:ro
     depends_on:
-      migrate: {condition: service_completed_successfully}
+      db: {condition: service_healthy}
   web:
     build: ./apps/web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
     ports: ["3000:3000"]
     depends_on: [api]
 volumes:

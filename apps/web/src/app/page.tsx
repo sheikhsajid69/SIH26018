@@ -243,6 +243,7 @@ export default function Home() {
   const [reviewSent, setReviewSent] = useState(false);
   const [notice, setNotice] = useState("");
   const [connection, setConnection] = useState<"live" | "fallback">("live");
+  const [apiError, setApiError] = useState<string | null>(null);
 
   // GIS Layer toggles
   const [showAuthorityLayer, setShowAuthorityLayer] = useState(true);
@@ -387,23 +388,34 @@ export default function Home() {
     setReviewSent(scenario.expected_result === "MATCH");
   }, [selectedScenarioIdx]);
 
-  // Initial fetch from API
-  useEffect(() => {
-    async function loadInitialData() {
-      try {
-        const token = getBearerToken();
-        const headers = { Authorization: `Bearer ${token}` };
-
-        // 1. History
-        const histRes = await fetch(`${apiBase}/api/v1/parcels/demo-parcel/history`, { headers });
-        if (histRes.ok) {
-          const histData = await histRes.json();
-          if (histData.mutation_history) setMutationHistory(histData.mutation_history);
-        }
-      } catch {
+  // Initial fetch from API with live health validation
+  const loadInitialData = async () => {
+    try {
+      const healthRes = await fetch(`${apiBase}/health`);
+      if (healthRes.ok) {
+        setConnection("live");
+        setApiError(null);
+      } else {
         setConnection("fallback");
+        setApiError(`Backend API returned unexpected status (${healthRes.status}). Operating in demonstration mode.`);
       }
+
+      const token = getBearerToken();
+      const headers = { Authorization: `Bearer ${token}` };
+
+      // 1. History
+      const histRes = await fetch(`${apiBase}/api/v1/parcels/demo-parcel/history`, { headers });
+      if (histRes.ok) {
+        const histData = await histRes.json();
+        if (histData.mutation_history) setMutationHistory(histData.mutation_history);
+      }
+    } catch {
+      setConnection("fallback");
+      setApiError(`Backend API at ${apiBase} is unreachable. Operating with local synthetic data fixtures.`);
     }
+  };
+
+  useEffect(() => {
     loadInitialData();
   }, [role]);
 
@@ -441,7 +453,10 @@ export default function Home() {
         body: form
       });
 
-      if (!response.ok) throw new Error(`Upload failed (${response.status})`);
+      if (!response.ok) {
+        const errDetail = await response.text();
+        throw new Error(`Upload failed (${response.status}): ${errDetail}`);
+      }
       const payload = await response.json();
 
       const newDoc: DocumentItem = {
@@ -456,8 +471,9 @@ export default function Home() {
 
       setDocs(current => [newDoc, ...current]);
       setConnection("live");
+      setApiError(null);
       setNotice(`Document '${file.name}' hashed with SHA-256 and processed by the AI validation pipeline.`);
-    } catch {
+    } catch (err: any) {
       const fallbackDoc: DocumentItem = {
         id: `doc-${Date.now()}`,
         name: file.name,
@@ -468,6 +484,7 @@ export default function Home() {
       };
       setDocs(current => [fallbackDoc, ...current]);
       setConnection("fallback");
+      setApiError(`Upload to live API failed: ${err.message || "Network error"}. Added to local offline demonstration queue.`);
       setNotice(`Demo API unavailable — '${file.name}' added in local offline demonstration mode.`);
     }
     event.target.value = "";
@@ -510,16 +527,21 @@ export default function Home() {
         })
       });
 
-      if (!response.ok) throw new Error("Decision request failed");
+      if (!response.ok) {
+        const errDetail = await response.text();
+        throw new Error(`Decision request failed (${response.status}): ${errDetail}`);
+      }
       const updatedCase: ReviewCaseItem = await response.json();
 
       setReviewCases(cases => cases.map(c => (c.id === selectedCaseId ? { ...c, status: "RESOLVED", resolution: resolutionChoice } : c)));
       setReviewSent(true);
       setConnection("live");
+      setApiError(null);
       setNotice(`Decision '${resolutionChoice}' recorded for case ${selectedCaseId}. Append-only audit event created.`);
-    } catch {
+    } catch (err: any) {
       setReviewSent(true);
       setConnection("fallback");
+      setApiError(`Decision sync failed: ${err.message || "Network error"}. Recorded in local offline demonstration session.`);
       setNotice("Decision recorded in clearly labelled local offline demonstration mode.");
     }
   };
@@ -712,6 +734,65 @@ export default function Home() {
 
         {/* Workspace Content */}
         <div className="content">
+          {apiError && (
+            <div
+              className="api-error-banner"
+              role="alert"
+              style={{
+                background: "#fef2f2",
+                border: "1px solid #fecaca",
+                color: "#991b1b",
+                padding: "10px 16px",
+                marginBottom: "16px",
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                fontSize: "13px",
+                boxShadow: "0 1px 2px rgba(0,0,0,0.05)"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <span style={{ fontSize: "16px" }}>⚠️</span>
+                <span><strong>API Connectivity Notice:</strong> {apiError}</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <button
+                  onClick={() => {
+                    setApiError(null);
+                    loadInitialData();
+                  }}
+                  style={{
+                    background: "#b91c1c",
+                    color: "#ffffff",
+                    border: "none",
+                    padding: "4px 12px",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                    fontSize: "12px",
+                    fontWeight: 600
+                  }}
+                >
+                  Retry Connection
+                </button>
+                <button
+                  onClick={() => setApiError(null)}
+                  style={{
+                    background: "transparent",
+                    color: "#991b1b",
+                    border: "none",
+                    cursor: "pointer",
+                    fontSize: "16px",
+                    padding: "0 4px"
+                  }}
+                  aria-label="Dismiss notice"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          )}
+
           {notice && (
             <div className="toast" role="status">
               <Icon name="check" size={16} />

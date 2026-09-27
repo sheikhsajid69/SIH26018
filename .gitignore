@@ -60,3 +60,9 @@ yarn-error.log*
 Thumbs.db
 .vscode/
 .idea/
+
+# Local databases and caches
+*.db
+*.sqlite
+*.sqlite3
+.pytest_cache/

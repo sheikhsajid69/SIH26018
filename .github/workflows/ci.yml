@@ -1,0 +1,96 @@
+name: LANDSYNC AI Continuous Integration
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  backend-test:
+    name: Backend Test & Database Verification
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_DB: landsync_test
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r apps/api/requirements.txt
+
+      - name: Run Alembic Migrations
+        env:
+          DATABASE_URL: postgresql+psycopg://test_user:test_password@localhost:5432/landsync_test
+        run: |
+          cd apps/api
+          alembic upgrade head
+
+      - name: Run Deterministic Seeding Script
+        env:
+          DATABASE_URL: postgresql+psycopg://test_user:test_password@localhost:5432/landsync_test
+        run: |
+          python scripts/seed_demo.py
+
+      - name: Run Test Suite (Pytest)
+        env:
+          DATABASE_URL: postgresql+psycopg://test_user:test_password@localhost:5432/landsync_test
+          JWT_SECRET_KEY: test-secret-key-ci-32-chars-long-12345
+        run: |
+          cd apps/api
+          pytest -v --tb=short
+
+  frontend-build:
+    name: Frontend Build & Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install Dependencies
+        run: |
+          cd apps/web
+          npm ci
+
+      - name: Next.js Production Build
+        run: |
+          cd apps/web
+          npm run build
+
+  docker-compose-validate:
+    name: Docker Compose Syntax Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose Configuration
+        run: docker compose config

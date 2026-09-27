@@ -14,63 +14,15 @@ from landsync.models import (
 from landsync.units import normalize_land_unit, parse_area_string
 
 
-class LocalEvidenceStore:
-    """
-    Local development evidence store.
-    Content-addressed SHA-256 storage keys prevent arbitrary path traversal.
-    """
+from landsync.storage import LocalEvidenceStorage, EvidenceStorageProvider
+from landsync.extraction import (
+    DocumentProvider,
+    MockDocumentProvider,
+    TextAndPdfDocumentProvider,
+    get_document_provider,
+)
 
-    def __init__(self, root: str) -> None:
-        self.root = Path(root)
-
-    def save(self, parcel_id: str, body: bytes) -> tuple[str, str]:
-        digest = hashlib.sha256(body).hexdigest()
-        key = f"documents/demo/{parcel_id}/{digest}/1/original"
-        target = self.root / key
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes(body)
-        return key, digest
-
-    def get(self, storage_key: str) -> bytes | None:
-        target = self.root / storage_key
-        # Strict boundary defense
-        try:
-            resolved = target.resolve()
-            if not str(resolved).startswith(str(self.root.resolve())):
-                raise ValueError("Path traversal attempt detected")
-            if resolved.is_file():
-                return resolved.read_bytes()
-        except Exception:
-            return None
-        return None
-
-
-class MockDocumentProvider:
-    """Deterministic substitute for OCR and document extraction."""
-
-    provider = "mock-document-ai"
-    model_version = "demo-1.2"
-
-    def extract(self) -> Extraction:
-        raw_fields = [
-            ("owner", "Ramesh Kumar", "ramesh kumar", 0.97, "page 1, block A, line 2"),
-            ("survey_number", "124/2", "124/2", 0.99, "page 1, schedule section, row 3"),
-            ("plot_number", "18B", "18b", 0.94, "page 1, schedule section, row 4"),
-            ("area", "2.31 acre", "2.31 acre", 0.88, "page 1, schedule property extent, row 6"),
-            ("village", "Sampurna", "sampurna", 0.95, "page 1, property address, row 8"),
-            ("land_use", "Agricultural", "agricultural", 0.92, "page 2, recital clause 4"),
-        ]
-        return Extraction(
-            provider=self.provider,
-            model_version=self.model_version,
-            fields=[
-                ExtractedField(
-                    field_name=f[0], extracted_value=f[1], normalized_value=f[2],
-                    confidence=f[3], source_location=f[4], extraction_method="MOCK_OCR_NER",
-                )
-                for f in raw_fields
-            ],
-        )
+LocalEvidenceStore = LocalEvidenceStorage
 
 
 def make_document(
@@ -79,9 +31,17 @@ def make_document(
     content_type: str,
     body: bytes,
     actor: str,
-    store: LocalEvidenceStore,
+    store: EvidenceStorageProvider | LocalEvidenceStore,
+    provider: DocumentProvider | None = None,
 ) -> Document:
-    key, digest = store.save(parcel_id, body)
+    doc_provider = provider or get_document_provider()
+    key, digest = store.save(parcel_id, body, filename=file_name)
+    extracted = doc_provider.extract(
+        file_name=file_name,
+        body=body,
+        content_type=content_type,
+        parcel_id=parcel_id,
+    )
     return Document(
         id=f"doc-{uuid4().hex[:12]}",
         parcel_id=parcel_id,
@@ -92,7 +52,7 @@ def make_document(
         sha256=digest,
         file_size=len(body),
         uploaded_by=actor,
-        extraction=MockDocumentProvider().extract(),
+        extraction=extracted,
     )
 
 

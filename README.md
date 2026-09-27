@@ -9,7 +9,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Next.js 15](https://img.shields.io/badge/Next.js-15.2.4-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![MongoDB Design](https://img.shields.io/badge/Design%20System-MongoDB%20Leaf-00ed64?style=for-the-badge&labelColor=001e2b&logo=mongodb&logoColor=00ed64)](https://www.mongodb.com/)
-[![Test Suite](https://img.shields.io/badge/Test%20Suite-15%2F15%20Passing-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white)](#automated-testing--verification)
+[![Test Suite](https://img.shields.io/badge/Test%20Suite-23%2F23%20Passing-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](#automated-testing--verification)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 <br/>
@@ -22,9 +22,10 @@
 
 [Key Features](#key-features) •
 [Architecture & Workflow](#architecture--core-workflow) •
-[MongoDB Design System](#mongodb-design-system-integration) •
+[Deployment Guide](DEPLOYMENT.md) •
+[Security Model](SECURITY.md) •
+[Production Checklist](PRODUCTION_CHECKLIST.md) •
 [14 Demo Scenarios](#14-comprehensive-demonstration-scenarios) •
-[Role-Based Access](#role-based-access--demonstration-tokens) •
 [Quickstart](#quickstart--local-deployment) •
 [API Reference](#api-endpoints--contracts) •
 [Trust Constitution](#ethical-boundaries--trust-constitution)
@@ -211,8 +212,8 @@ The topbar role-switcher dynamically alters client credentials and permissions:
 ## Quickstart & Local Deployment
 
 ### System Prerequisites
-- **Node.js**: v20.x or higher
-- **Python**: v3.12+ (or v3.14)
+- **Node.js**: v18.x or higher
+- **Python**: v3.11+ (tested on Python 3.12, 3.14)
 - **Git**
 
 ### 1. Clone the Repository
@@ -225,6 +226,12 @@ cd SIH26018
 ```powershell
 cd apps/api
 python -m pip install -r requirements.txt
+
+# Apply database migrations and seed all 14 synthetic scenarios:
+alembic upgrade head
+python ../../scripts/seed_demo.py
+
+# Launch development server:
 uvicorn landsync.main:app --reload --port 8000
 ```
 - API Health Endpoint: [http://localhost:8000/health](http://localhost:8000/health)
@@ -238,36 +245,26 @@ npm run dev
 ```
 - Web Application: [http://localhost:3000](http://localhost:3000)
 
+### 4. Or Run Full Stack via Docker Compose
+```bash
+docker compose up --build -d
+```
+See [DEPLOYMENT.md](DEPLOYMENT.md) for complete cloud and Docker deployment instructions.
+
 ---
 
 ## Automated Testing & Verification
 
-The solution features a 15-test Python test suite covering unit conversions, spatial calculations, security RBAC, and consistency scoring:
+The platform features an automated 23-test test suite across API endpoints, service logic, storage tamper defenses, and domain security:
 
 ```powershell
-# Run API & Domain Test Suite
-python -m unittest discover -s apps/api/tests -v
+# Run Backend Test Suite with Pytest
+cd apps/api
+pytest -v
 ```
 
 ```
-test_convert_area_sqm (test_units.TestUnitConversions) ... ok
-test_rule13_ambiguous_bigha_raises_error (test_units.TestUnitConversions) ... ok
-test_rule13_disambiguated_bigha_succeeds (test_units.TestUnitConversions) ... ok
-test_blueprint_geometry_extraction (test_blueprint.TestBlueprintCV) ... ok
-test_consistency_validation_clean_match (test_validation.TestValidationEngine) ... ok
-test_consistency_validation_area_mismatch (test_validation.TestValidationEngine) ... ok
-test_consistency_validation_name_alias (test_validation.TestValidationEngine) ... ok
-test_evidence_hashing_sha256 (test_evidence.TestEvidenceVault) ... ok
-test_officer_rbac_decision_allowed (test_rbac.TestRBACPermissions) ... ok
-test_citizen_rbac_decision_forbidden (test_rbac.TestRBACPermissions) ... ok
-test_api_get_parcel (test_api.TestEndpoints) ... ok
-test_api_validate_discrepancy (test_api.TestEndpoints) ... ok
-test_api_review_case_lifecycle (test_api.TestEndpoints) ... ok
-test_api_admin_health_metrics (test_api.TestEndpoints) ... ok
-test_adapter_state_isolation (test_adapters.TestStateAdapters) ... ok
-
-----------------------------------------------------------------------
-Ran 15 tests in 0.081s - ALL OK
+======================== 23 passed, 1 warning in 1.19s ========================
 ```
 
 ```powershell
@@ -283,13 +280,25 @@ npm run build
 | Method | Endpoint | Authorization | Description |
 | :--- | :--- | :--- | :--- |
 | `GET` | `/health` | Public | System status and service health check |
-| `GET` | `/api/v1/parcels` | `Bearer demo-*` | List all synthetic land parcels |
-| `GET` | `/api/v1/parcels/{id}` | `Bearer demo-*` | Get single parcel record with GeoJSON geometry |
-| `POST` | `/api/v1/documents/upload` | `Bearer demo-*` | Ingest deed/sketch, compute SHA-256, store in vault |
-| `POST` | `/api/v1/validate` | `Bearer demo-*` | Run consistency engine between claimed and authority records |
-| `GET` | `/api/v1/review-cases` | `Bearer demo-officer`, `demo-admin` | Fetch officer review queue with severity filtering |
-| `POST` | `/api/v1/review-cases/{id}/decision` | `Bearer demo-officer` | Record adjudication decision with mandatory audit rationale |
-| `GET` | `/api/v1/admin/health` | `Bearer demo-admin` | Retrieve state adapter health, storage counts, audit stream |
+| `GET` | `/health/live` | Public | Liveness probe for Kubernetes / cloud orchestrator |
+| `GET` | `/health/ready` | Public | Readiness probe verifying database connectivity |
+| `GET` | `/api/v1/auth/demo` | Public | List available demonstration roles & tokens |
+| `POST` | `/api/v1/auth/login` | Public | Authenticate user & issue signed HS256 JWT |
+| `GET` | `/api/v1/auth/me` | Bearer Token | Retrieve currently authenticated user profile |
+| `GET` | `/api/v1/parcels/search` | Bearer Token | Search parcels by survey number, ULPIN, or village |
+| `GET` | `/api/v1/parcels/{id}` | Bearer Token | Retrieve single parcel record with GeoJSON geometry |
+| `GET` | `/api/v1/parcels/{id}/ownership` | Bearer Token | Retrieve parcel ownership & Khatedar records |
+| `GET` | `/api/v1/parcels/{id}/history` | Bearer Token | Retrieve chronologically ordered mutation timeline |
+| `GET` | `/api/v1/parcels/{id}/report` | Bearer Token | Generate Digital Land Profile & Consistency Report |
+| `POST` | `/api/v1/parcels/{id}/documents` | Citizen, Officer | Ingest deed, compute SHA-256, execute AI extraction & validation |
+| `POST` | `/api/v1/parcels/{id}/blueprint` | Citizen, Officer | Computer Vision boundary edge and CAD spatial analysis |
+| `GET` | `/api/v1/documents/raw` | Bearer Token | Stream raw evidence document from storage provider |
+| `GET` | `/api/v1/parcels/{id}/validation` | Bearer Token | Evaluate consistency between document extractions & authority |
+| `GET` | `/api/v1/review-cases` | Officer, Admin | Retrieve officer review queue with severity filtering |
+| `GET` | `/api/v1/review-cases/{id}` | Officer, Admin | Retrieve adjudication dossier for a specific review case |
+| `POST` | `/api/v1/review-cases/{id}/decision` | Officer Only | Record legally binding decision with mandatory audit rationale |
+| `GET` | `/api/v1/audit` | Officer, Admin | Query immutable cryptographic audit trail |
+| `GET` | `/api/v1/admin/health` | Admin Only | System telemetry, state adapter counts, and storage metrics |
 
 ---
 
