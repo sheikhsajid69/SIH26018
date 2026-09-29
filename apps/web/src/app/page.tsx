@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { SYNTHETIC_SCENARIOS, ScenarioData } from "./scenarios";
 
 type RoleType = "citizen" | "officer" | "admin";
@@ -615,6 +616,14 @@ export default function Home() {
               System Admin Health
             </button>
           )}
+          <Link
+            href="/admin/dashboard"
+            className="nav-item"
+            style={{ color: "#00ed64", border: "1px solid rgba(0, 237, 100, 0.25)", borderRadius: "8px", margin: "6px 0", background: "rgba(0, 104, 74, 0.15)" }}
+          >
+            <Icon name="shield" />
+            Admin Governance Console ↗
+          </Link>
         </nav>
 
         <div className="sidebar-bottom">
@@ -665,6 +674,16 @@ export default function Home() {
               <Icon name="printer" size={15} />
               Consistency Report
             </button>
+
+            <Link
+              href="/admin/login"
+              className="report-button"
+              style={{ background: "rgba(0, 104, 74, 0.4)", color: "#c3f0d2", borderColor: "#00684a" }}
+              title="Launch Governed Administrator Console"
+            >
+              <Icon name="shield" size={15} />
+              Admin Console
+            </Link>
 
             {/* Interactive Role Switcher */}
             <div className="role-switcher-container">

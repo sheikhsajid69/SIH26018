@@ -4,6 +4,7 @@ from typing import Any
 from sqlalchemy import or_, select
 from sqlalchemy.orm import Session, joinedload
 from landsync.db_models import (
+    AdministrativeActionOrm,
     AuditEventOrm,
     DocumentOrm,
     ExtractedFieldOrm,
@@ -41,6 +42,67 @@ class UserRepository:
 
     def get_by_email(self, email: str) -> UserOrm | None:
         return self.db.execute(select(UserOrm).where(UserOrm.email == email)).scalar_one_or_none()
+
+    def get_by_email_or_username(self, identifier: str) -> UserOrm | None:
+        clean = identifier.strip()
+        return self.db.execute(
+            select(UserOrm).where(
+                or_(
+                    UserOrm.username == clean,
+                    UserOrm.email == clean,
+                    UserOrm.id == clean,
+                )
+            )
+        ).scalar_one_or_none()
+
+    def list_users(
+        self,
+        search: str | None = None,
+        role: str | None = None,
+        status: str | None = None,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> tuple[list[UserOrm], int]:
+        stmt = select(UserOrm)
+        if search:
+            q = f"%{search.strip()}%"
+            stmt = stmt.where(or_(UserOrm.name.ilike(q), UserOrm.email.ilike(q), UserOrm.username.ilike(q), UserOrm.id.ilike(q)))
+        if role:
+            stmt = stmt.where(UserOrm.role == role)
+        if status:
+            stmt = stmt.where(UserOrm.status == status)
+
+        total = len(self.db.execute(stmt).scalars().all())
+        users = self.db.execute(stmt.order_by(UserOrm.created_at.desc()).offset(offset).limit(limit)).scalars().all()
+        return list(users), total
+
+    def update_status(self, user_id: str, new_status: str) -> UserOrm | None:
+        user = self.get_by_id(user_id)
+        if not user:
+            return None
+        user.status = new_status
+        self.db.commit()
+        self.db.refresh(user)
+        return user
+
+    def update_role(self, user_id: str, new_role: str) -> UserOrm | None:
+        user = self.get_by_id(user_id)
+        if not user:
+            return None
+        user.role = new_role
+        self.db.commit()
+        self.db.refresh(user)
+        return user
+
+    def update_last_login(self, user_id: str) -> None:
+        from datetime import datetime, timezone
+        user = self.get_by_id(user_id) or self.get_by_username(user_id)
+        if user:
+            user.last_login = datetime.now(timezone.utc)
+            self.db.commit()
+
+    def list_officers(self) -> list[UserOrm]:
+        return list(self.db.execute(select(UserOrm).where(UserOrm.role == "revenue_officer")).scalars().all())
 
     def create(self, user_orm: UserOrm) -> UserOrm:
         self.db.add(user_orm)
@@ -569,3 +631,36 @@ class AuditRepository:
 
     def count(self) -> int:
         return len(self.db.execute(select(AuditEventOrm.id)).scalars().all())
+
+
+class AdministrativeActionRepository:
+    def __init__(self, db: Session) -> None:
+        self.db = db
+
+    def create(self, action: AdministrativeActionOrm) -> AdministrativeActionOrm:
+        self.db.add(action)
+        self.db.commit()
+        self.db.refresh(action)
+        return action
+
+    def list_actions(
+        self,
+        action_type: str | None = None,
+        actor_id: str | None = None,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> tuple[list[AdministrativeActionOrm], int]:
+        stmt = select(AdministrativeActionOrm)
+        if action_type:
+            stmt = stmt.where(AdministrativeActionOrm.action_type == action_type)
+        if actor_id:
+            stmt = stmt.where(AdministrativeActionOrm.actor_id == actor_id)
+
+        total = len(self.db.execute(stmt).scalars().all())
+        actions = self.db.execute(
+            stmt.order_by(AdministrativeActionOrm.created_at.desc()).offset(offset).limit(limit)
+        ).scalars().all()
+        return list(actions), total
+
+    def count(self) -> int:
+        return len(self.db.execute(select(AdministrativeActionOrm.id)).scalars().all())

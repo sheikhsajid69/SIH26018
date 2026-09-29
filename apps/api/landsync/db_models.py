@@ -35,6 +35,7 @@ class UserOrm(Base):
     jurisdiction: Mapped[str | None] = mapped_column(String(256), nullable=True)
     permitted_parcels: Mapped[list[str]] = mapped_column(JSON, default=list)
     status: Mapped[str] = mapped_column(String(32), default="ACTIVE")
+    last_login: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
@@ -216,7 +217,26 @@ class AuditEventOrm(Base):
     trace_id: Mapped[str] = mapped_column(String(64), index=True)
 
 
+class AdministrativeActionOrm(Base):
+    __tablename__ = "administrative_actions"
+
+    id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    action_type: Mapped[str] = mapped_column(String(64), index=True)
+    actor_id: Mapped[str] = mapped_column(String(128), index=True)
+    actor_role: Mapped[str] = mapped_column(String(32), default="administrator")
+    target_resource_type: Mapped[str] = mapped_column(String(64), index=True)
+    target_resource_id: Mapped[str] = mapped_column(String(128), index=True)
+    reason: Mapped[str] = mapped_column(Text)
+    before_state: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
+    after_state: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
+    status: Mapped[str] = mapped_column(String(32), default="EXECUTED")
+    ip_address: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    user_agent: Mapped[str | None] = mapped_column(String(256), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, index=True)
+
+
 # Composite indexes for high-throughput queries
 Index("idx_parcels_survey_village", LandParcelOrm.survey_number, LandParcelOrm.village)
 Index("idx_review_cases_status_priority", ReviewCaseOrm.status, ReviewCaseOrm.priority)
 Index("idx_audit_events_entity", AuditEventOrm.entity_type, AuditEventOrm.entity_id)
+Index("idx_admin_actions_actor", AdministrativeActionOrm.actor_id, AdministrativeActionOrm.created_at)

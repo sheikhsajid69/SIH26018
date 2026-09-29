@@ -13,6 +13,14 @@ from landsync.models import Role
 JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "landsync-ai-demo-secret-key-change-in-production-1234567890")
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_MINUTES = int(os.getenv("JWT_EXPIRATION_MINUTES", "120"))
+APP_ENV = os.getenv("APP_ENV", "development").lower().strip()
+DEMO_MODE = os.getenv("DEMO_MODE", "true").lower().strip() in ("true", "1", "yes")
+
+
+def is_demo_mode() -> bool:
+    """Return True only if DEMO_MODE is enabled and environment is not strict production."""
+    return DEMO_MODE and APP_ENV != "production"
+
 
 # Static demo tokens mapping
 DEMO_TOKENS: dict[str, tuple[str, Role]] = {
@@ -88,11 +96,16 @@ def get_current_user(authorization: Annotated[str | None, Header()] = None) -> t
 
     token = authorization.removeprefix("Bearer ").strip()
 
-    # 1. Fast path for demo tokens
+    # 1. Fast path for demo tokens (only if demo mode is enabled)
     if token in DEMO_TOKENS:
+        if not is_demo_mode():
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Demo authentication tokens are disabled in production mode. Please log in with valid credentials.",
+            )
         return DEMO_TOKENS[token]
 
-    # 2. JWT verification
+    # 2. Cryptographic JWT verification
     return decode_access_token(token)
 
 

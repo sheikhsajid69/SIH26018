@@ -16,6 +16,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "apps" / "api"))
 
+from landsync.auth import hash_password
 from landsync.database import SessionLocal, init_db
 from landsync.db_models import (
     AuditEventOrm,
@@ -44,24 +45,33 @@ def seed() -> None:
         if users_file.exists():
             users_data = json.loads(users_file.read_text(encoding="utf-8"))
             for u in users_data:
+                role = u["role"]
+                # Default passwords for synthetic demonstration accounts
+                pwd = "Admin@LandSync2026!" if role == "administrator" else ("Officer@LandSync2026!" if role == "revenue_officer" else "Citizen@LandSync2026!")
+                p_hash = hash_password(pwd)
+                username_alias = "admin" if role == "administrator" else ("officer" if role == "revenue_officer" else "citizen")
+
                 existing_user = db.query(UserOrm).filter(UserOrm.id == u["user_id"]).first()
                 if not existing_user:
                     db.add(
                         UserOrm(
                             id=u["user_id"],
-                            username=u["role"],
+                            username=username_alias,
                             email=u["email"],
-                            password_hash=None,
+                            password_hash=p_hash,
                             role=u["role"],
                             name=u["name"],
                             phone=u.get("phone"),
                             jurisdiction=u.get("jurisdiction"),
                             permitted_parcels=u.get("permitted_parcels", []),
-                            status=u.get("status", "ACTIVE_SYNTHETIC"),
+                            status=u.get("status", "ACTIVE"),
                         )
                     )
+                elif not existing_user.password_hash:
+                    existing_user.password_hash = p_hash
+                    existing_user.username = username_alias
             db.commit()
-            print(f"[+] Seeded {len(users_data)} synthetic users.")
+            print(f"[+] Seeded {len(users_data)} synthetic users with bcrypt credentials.")
 
         # 2. Seed Land Parcels from authority_records.json
         auth_file = SYNTHETIC_DIR / "authority_records.json"
