@@ -1,0 +1,117 @@
+{
+  "properties": {
+    "parcel_id": {
+      "description": "Deterministic synthetic primary key (e.g. SYN-PARCEL-000001)",
+      "title": "Parcel Id",
+      "type": "string"
+    },
+    "synthetic_record_flag": {
+      "default": true,
+      "description": "Strict synthetic data flag, always true",
+      "title": "Synthetic Record Flag",
+      "type": "boolean"
+    },
+    "jurisdiction_id": {
+      "description": "Reference to jurisdiction profile (e.g. KA_PILOT)",
+      "title": "Jurisdiction Id",
+      "type": "string"
+    },
+    "village_code": {
+      "description": "Synthetic village code",
+      "title": "Village Code",
+      "type": "string"
+    },
+    "survey_number": {
+      "description": "Survey number component (e.g. 101)",
+      "title": "Survey Number",
+      "type": "string"
+    },
+    "subdivision_number": {
+      "description": "Hissa / subdivision component (e.g. 1 or 2A)",
+      "title": "Subdivision Number",
+      "type": "string"
+    },
+    "plot_number": {
+      "description": "Plot or site number (for non-agricultural / layout)",
+      "title": "Plot Number",
+      "type": "string"
+    },
+    "parcel_type": {
+      "description": "RURAL_AGRICULTURAL, URBAN_RESIDENTIAL, COMMERCIAL, etc.",
+      "title": "Parcel Type",
+      "type": "string"
+    },
+    "land_classification": {
+      "description": "Dry (Kushki), Wet (Tari), Garden (Bagayat), Non-Agri",
+      "title": "Land Classification",
+      "type": "string"
+    },
+    "area_value": {
+      "description": "Numeric extent as stated in source record",
+      "title": "Area Value",
+      "type": "number"
+    },
+    "area_unit": {
+      "description": "Unit of area (acre, guntha, cent, sqm, bigha)",
+      "title": "Area Unit",
+      "type": "string"
+    },
+    "area_square_metres": {
+      "description": "Normalized area in square metres (SI standard)",
+      "title": "Area Square Metres",
+      "type": "number"
+    },
+    "area_normalization_method": {
+      "description": "STANDARD_SI_FORMULA, REGIONAL_SCHEDULE, UNRESOLVED_RULE13",
+      "title": "Area Normalization Method",
+      "type": "string"
+    },
+    "boundary_geometry_id": {
+      "description": "Foreign key to spatial_feature record",
+      "title": "Boundary Geometry Id",
+      "type": "string"
+    },
+    "source_record_id": {
+      "description": "Reference authority record ID (RTC/RoR)",
+      "title": "Source Record Id",
+      "type": "string"
+    },
+    "record_effective_date": {
+      "description": "ISO date when record became effective",
+      "title": "Record Effective Date",
+      "type": "string"
+    },
+    "record_status": {
+      "description": "ACTIVE, HISTORICAL_SUPERSEDED, PENDING_MUTATION",
+      "title": "Record Status",
+      "type": "string"
+    },
+    "provenance_id": {
+      "description": "Foreign key to provenance record",
+      "title": "Provenance Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "parcel_id",
+    "jurisdiction_id",
+    "village_code",
+    "survey_number",
+    "subdivision_number",
+    "plot_number",
+    "parcel_type",
+    "land_classification",
+    "area_value",
+    "area_unit",
+    "area_square_metres",
+    "area_normalization_method",
+    "boundary_geometry_id",
+    "source_record_id",
+    "record_effective_date",
+    "record_status",
+    "provenance_id"
+  ],
+  "title": "LANDSYNC Synthetic Parcel",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

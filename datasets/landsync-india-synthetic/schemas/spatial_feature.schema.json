@@ -1,0 +1,76 @@
+{
+  "properties": {
+    "geometry_id": {
+      "description": "Synthetic geometry key (e.g. SYN-GEOM-000001)",
+      "title": "Geometry Id",
+      "type": "string"
+    },
+    "parcel_id": {
+      "description": "Foreign key to parcel",
+      "title": "Parcel Id",
+      "type": "string"
+    },
+    "geometry_type": {
+      "default": "Polygon",
+      "description": "GeoJSON geometry type (Polygon, MultiPolygon)",
+      "title": "Geometry Type",
+      "type": "string"
+    },
+    "coordinate_reference_system": {
+      "default": "EPSG:4326",
+      "description": "CRS of coordinate pairs",
+      "title": "Coordinate Reference System",
+      "type": "string"
+    },
+    "geometry": {
+      "additionalProperties": true,
+      "description": "GeoJSON geometry object",
+      "title": "Geometry",
+      "type": "object"
+    },
+    "area_from_geometry": {
+      "description": "Geodesic / projected area computed in square metres",
+      "title": "Area From Geometry",
+      "type": "number"
+    },
+    "perimeter_from_geometry": {
+      "description": "Perimeter computed in metres",
+      "title": "Perimeter From Geometry",
+      "type": "number"
+    },
+    "geometry_validity": {
+      "description": "VALID, SELF_INTERSECTING, UNCLOSED_RING, DEGENERATE_COORDINATES",
+      "title": "Geometry Validity",
+      "type": "string"
+    },
+    "spatial_quality_status": {
+      "description": "CONSISTENT, SPATIAL_VARIANCE_DETECTED, OVERLAP_ANOMALY, SLIVER_GAP",
+      "title": "Spatial Quality Status",
+      "type": "string"
+    },
+    "source_reference": {
+      "description": "CADASTRAL_MAP_OFFICIAL, BLUEPRINT_SURVEY_SKETCH, GPS_FIELD_SURVEY",
+      "title": "Source Reference",
+      "type": "string"
+    },
+    "synthetic_geometry_flag": {
+      "default": true,
+      "description": "Always true",
+      "title": "Synthetic Geometry Flag",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "geometry_id",
+    "parcel_id",
+    "geometry",
+    "area_from_geometry",
+    "perimeter_from_geometry",
+    "geometry_validity",
+    "spatial_quality_status",
+    "source_reference"
+  ],
+  "title": "LANDSYNC Synthetic Spatial Feature",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

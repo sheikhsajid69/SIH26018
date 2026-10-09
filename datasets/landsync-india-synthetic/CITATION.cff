@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this benchmark dataset in academic research or technical evaluations, please cite it as below."
+title: "LANDSYNC-India: Synthetic Cadastral & Land Record Benchmark"
+abstract: "A reproducible, legally informed, and mathematically consistent synthetic benchmark dataset for Indian land record digitization, Document AI, and cadastral spatial validation."
+version: 1.0.0
+date-released: 2026-10-09
+authors:
+  - family-names: "Sheikh"
+    given-names: "Sajid"
+    orcid: "https://orcid.org/0009-0000-0000-0000"
+  - name: "LANDSYNC AI Research Team"
+repository-code: "https://github.com/sheikhsajid69/SIH26018"
+url: "https://www.kaggle.com/datasets/sheikhsajid69/landsync-india-synthetic"
+keywords:
+  - "cadastral"
+  - "land-records"
+  - "synthetic-data"
+  - "document-ai"
+  - "india"
+  - "gis"
+  - "smart-india-hackathon"
+license: "CC-BY-4.0"

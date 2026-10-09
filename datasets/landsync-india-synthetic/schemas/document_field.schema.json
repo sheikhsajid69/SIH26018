@@ -1,0 +1,104 @@
+{
+  "properties": {
+    "field_id": {
+      "description": "Synthetic field annotation ID (e.g. SYN-FIELD-000001)",
+      "title": "Field Id",
+      "type": "string"
+    },
+    "document_id": {
+      "description": "Foreign key to document",
+      "title": "Document Id",
+      "type": "string"
+    },
+    "field_name": {
+      "description": "owner, survey_number, subdivision_number, plot_number, area, village, land_use, date",
+      "title": "Field Name",
+      "type": "string"
+    },
+    "raw_value": {
+      "description": "Raw text as extracted by simulated OCR/NER",
+      "title": "Raw Value",
+      "type": "string"
+    },
+    "ground_truth_value": {
+      "description": "True underlying value in document",
+      "title": "Ground Truth Value",
+      "type": "string"
+    },
+    "normalized_value": {
+      "description": "Clean normalized representation",
+      "title": "Normalized Value",
+      "type": "string"
+    },
+    "data_type": {
+      "description": "STRING, NUMERIC, DATE, AREA",
+      "title": "Data Type",
+      "type": "string"
+    },
+    "unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Extracted unit if applicable (acre, guntha, etc.)",
+      "title": "Unit"
+    },
+    "page_number": {
+      "default": 1,
+      "description": "Page number of annotation (1-indexed)",
+      "title": "Page Number",
+      "type": "integer"
+    },
+    "bounding_box": {
+      "description": "Normalized [ymin, xmin, ymax, xmax] coordinates (0-1000 scale)",
+      "items": {
+        "type": "integer"
+      },
+      "title": "Bounding Box",
+      "type": "array"
+    },
+    "extraction_method": {
+      "description": "OCR_TRANSCRIPTION, REGEX_PATTERN, NER_ENTITY, LAYOUT_LM",
+      "title": "Extraction Method",
+      "type": "string"
+    },
+    "confidence": {
+      "description": "Confidence score between 0.0 and 1.0",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "noise_type": {
+      "description": "NONE, CHAR_SUBSTITUTION, DROPPED_CHAR, WHITESPACE_VARIATION, LOW_RES",
+      "title": "Noise Type",
+      "type": "string"
+    },
+    "annotation_status": {
+      "description": "VERIFIED_GROUND_TRUTH, SYNTHETIC_SIMULATED",
+      "title": "Annotation Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "field_id",
+    "document_id",
+    "field_name",
+    "raw_value",
+    "ground_truth_value",
+    "normalized_value",
+    "data_type",
+    "extraction_method",
+    "confidence",
+    "noise_type",
+    "annotation_status"
+  ],
+  "title": "LANDSYNC Synthetic Document Field",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

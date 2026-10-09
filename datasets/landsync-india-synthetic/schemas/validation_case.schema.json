@@ -1,0 +1,116 @@
+{
+  "$defs": {
+    "ValidationOutcome": {
+      "enum": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MISMATCH",
+        "MISSING",
+        "REVIEW_REQUIRED"
+      ],
+      "title": "ValidationOutcome",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "case_id": {
+      "description": "Synthetic case ID (e.g. SYN-CASE-000001)",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "primary_parcel_id": {
+      "description": "Foreign key to parcel under validation",
+      "title": "Primary Parcel Id",
+      "type": "string"
+    },
+    "scenario_family": {
+      "description": "Scenario category (CORE_CONSISTENCY, SPATIAL_VALIDATION, etc.)",
+      "title": "Scenario Family",
+      "type": "string"
+    },
+    "scenario_tags": {
+      "description": "Descriptive tags",
+      "items": {
+        "type": "string"
+      },
+      "title": "Scenario Tags",
+      "type": "array"
+    },
+    "difficulty": {
+      "description": "EASY, MEDIUM, HARD, ADVERSARIAL",
+      "title": "Difficulty",
+      "type": "string"
+    },
+    "input_record_ids": {
+      "description": "List of parcel, document, extraction, and geometry IDs",
+      "items": {
+        "type": "string"
+      },
+      "title": "Input Record Ids",
+      "type": "array"
+    },
+    "expected_outcome": {
+      "$ref": "#/$defs/ValidationOutcome",
+      "description": "MATCH, PARTIAL_MATCH, MISMATCH, MISSING, REVIEW_REQUIRED"
+    },
+    "expected_reason_codes": {
+      "description": "Standardized reason codes",
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Reason Codes",
+      "type": "array"
+    },
+    "expected_rule_ids": {
+      "description": "Legal and data quality rule IDs triggered",
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Rule Ids",
+      "type": "array"
+    },
+    "review_required": {
+      "description": "Whether a human officer decision is required",
+      "title": "Review Required",
+      "type": "boolean"
+    },
+    "ground_truth_confidence": {
+      "description": "Benchmark certainty score",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Ground Truth Confidence",
+      "type": "number"
+    },
+    "split_group_id": {
+      "description": "Group ID for leakage-safe train/val/test splits",
+      "title": "Split Group Id",
+      "type": "string"
+    },
+    "generator_version": {
+      "default": "1.0.0",
+      "title": "Generator Version",
+      "type": "string"
+    },
+    "seed_reference": {
+      "default": 42,
+      "title": "Seed Reference",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "case_id",
+    "primary_parcel_id",
+    "scenario_family",
+    "difficulty",
+    "input_record_ids",
+    "expected_outcome",
+    "expected_reason_codes",
+    "expected_rule_ids",
+    "review_required",
+    "ground_truth_confidence",
+    "split_group_id"
+  ],
+  "title": "LANDSYNC Synthetic Validation Case",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

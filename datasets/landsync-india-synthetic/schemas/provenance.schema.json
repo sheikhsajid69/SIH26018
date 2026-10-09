@@ -1,0 +1,66 @@
+{
+  "properties": {
+    "provenance_id": {
+      "description": "Synthetic provenance key (e.g. SYN-PROV-000001)",
+      "title": "Provenance Id",
+      "type": "string"
+    },
+    "source_type": {
+      "description": "DETERMINISTIC_SYNTHETIC_GENERATOR",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "source_reference": {
+      "description": "Generator engine configuration and pipeline module",
+      "title": "Source Reference",
+      "type": "string"
+    },
+    "generation_method": {
+      "description": "PSEUDO_RANDOM_STRATIFIED_SAMPLING",
+      "title": "Generation Method",
+      "type": "string"
+    },
+    "generator_version": {
+      "default": "1.0.0",
+      "title": "Generator Version",
+      "type": "string"
+    },
+    "generation_seed": {
+      "default": 42,
+      "title": "Generation Seed",
+      "type": "integer"
+    },
+    "transformation_history": {
+      "description": "Summary of normalizations and transformations applied",
+      "title": "Transformation History",
+      "type": "string"
+    },
+    "creation_timestamp": {
+      "description": "ISO creation timestamp",
+      "title": "Creation Timestamp",
+      "type": "string"
+    },
+    "license_reference": {
+      "description": "CC-BY-4.0 (Dataset) / MIT (Software Code)",
+      "title": "License Reference",
+      "type": "string"
+    },
+    "synthetic_status": {
+      "default": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD",
+      "title": "Synthetic Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance_id",
+    "source_type",
+    "source_reference",
+    "generation_method",
+    "transformation_history",
+    "creation_timestamp",
+    "license_reference"
+  ],
+  "title": "LANDSYNC Synthetic Provenance",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

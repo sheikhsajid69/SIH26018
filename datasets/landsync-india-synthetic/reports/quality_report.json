@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "total_checks": 18,
+  "passed_checks": 18,
+  "failed_checks": 0,
+  "checks": [
+    {
+      "check_name": "unique_primary_key_parcels",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'parcel_id' in 'parcels' is unique (10000 total, 10000 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_parties",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'party_id' in 'parties' is unique (10000 total, 10000 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_ownership_claims",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'claim_id' in 'ownership_claims' is unique (11250 total, 11250 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_documents",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'document_id' in 'documents' is unique (5500 total, 5500 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_document_fields",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'field_id' in 'document_fields' is unique (33000 total, 33000 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_mutation_events",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'mutation_event_id' in 'mutation_events' is unique (3500 total, 3500 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_encumbrances",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'interest_id' in 'encumbrances' is unique (1500 total, 1500 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_validation_cases",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'case_id' in 'validation_cases' is unique (2880 total, 2880 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_validation_findings",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'finding_id' in 'validation_findings' is unique (2880 total, 2880 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "unique_primary_key_rule_catalogue",
+      "category": "STRUCTURAL",
+      "passed": true,
+      "message": "Primary key 'rule_id' in 'rule_catalogue' is unique (17 total, 17 unique).",
+      "details": {}
+    },
+    {
+      "check_name": "referential_integrity_documents_to_parcels",
+      "category": "REFERENTIAL",
+      "passed": true,
+      "message": "All 5500 documents reference valid parcels.",
+      "details": {}
+    },
+    {
+      "check_name": "referential_integrity_findings_to_cases",
+      "category": "REFERENTIAL",
+      "passed": true,
+      "message": "All 2880 findings reference valid validation cases.",
+      "details": {}
+    },
+    {
+      "check_name": "referential_integrity_findings_to_rules",
+      "category": "REFERENTIAL",
+      "passed": true,
+      "message": "All findings reference existing rules in rule catalogue.",
+      "details": {}
+    },
+    {
+      "check_name": "domain_spatial_geojson_integrity",
+      "category": "DOMAIN",
+      "passed": true,
+      "message": "Spatial features GeoJSON parsed successfully with 5500 features (>= 5,000 target).",
+      "details": {}
+    },
+    {
+      "check_name": "distribution_validation_cases_count",
+      "category": "DISTRIBUTION",
+      "passed": true,
+      "message": "Total validation cases: 2880 (>= 1,500 target achieved).",
+      "details": {
+        "actual_count": 2880,
+        "required_target": 1500
+      }
+    },
+    {
+      "check_name": "distribution_parcels_count",
+      "category": "DISTRIBUTION",
+      "passed": true,
+      "message": "Total synthetic parcels: 10000 (>= 10,000 target achieved).",
+      "details": {
+        "actual_count": 10000,
+        "required_target": 10000
+      }
+    },
+    {
+      "check_name": "distribution_split_safety_and_leakage",
+      "category": "DISTRIBUTION",
+      "passed": true,
+      "message": "Split files exist and pass non-leakage invariant.",
+      "details": {}
+    },
+    {
+      "check_name": "publication_manifest_completeness",
+      "category": "PUBLICATION",
+      "passed": true,
+      "message": "Manifest exists, valid JSON, and indexes all generated artifact files.",
+      "details": {}
+    }
+  ]
+}

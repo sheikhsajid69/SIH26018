@@ -1,0 +1,88 @@
+{
+  "properties": {
+    "claim_id": {
+      "description": "Synthetic claim ID (e.g. SYN-CLAIM-000001)",
+      "title": "Claim Id",
+      "type": "string"
+    },
+    "parcel_id": {
+      "description": "Foreign key to parcel",
+      "title": "Parcel Id",
+      "type": "string"
+    },
+    "party_id": {
+      "description": "Foreign key to party",
+      "title": "Party Id",
+      "type": "string"
+    },
+    "claim_type": {
+      "description": "SOLE_KHATEDAR, CO_PARCENER, JOINT_TENANT, LESSEE, MORTGAGOR",
+      "title": "Claim Type",
+      "type": "string"
+    },
+    "share_numerator": {
+      "description": "Numerator of undivided interest (e.g. 1)",
+      "title": "Share Numerator",
+      "type": "integer"
+    },
+    "share_denominator": {
+      "description": "Denominator of undivided interest (e.g. 1, 2, 4)",
+      "title": "Share Denominator",
+      "type": "integer"
+    },
+    "claim_start_date": {
+      "description": "ISO start date of ownership claim",
+      "title": "Claim Start Date",
+      "type": "string"
+    },
+    "claim_end_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "ISO end date if terminated/relinquished",
+      "title": "Claim End Date"
+    },
+    "source_document_id": {
+      "description": "Supporting title document or mutation entry ID",
+      "title": "Source Document Id",
+      "type": "string"
+    },
+    "source_status": {
+      "description": "REGISTERED_DEED, MUTATION_ORDER, REVENUE_EXTRACT",
+      "title": "Source Status",
+      "type": "string"
+    },
+    "verification_status": {
+      "description": "RECORD_VERIFIED, PENDING_AUDIT, DISCREPANT",
+      "title": "Verification Status",
+      "type": "string"
+    },
+    "benchmark_note": {
+      "description": "Synthetic context note regarding this claim",
+      "title": "Benchmark Note",
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_id",
+    "parcel_id",
+    "party_id",
+    "claim_type",
+    "share_numerator",
+    "share_denominator",
+    "claim_start_date",
+    "source_document_id",
+    "source_status",
+    "verification_status",
+    "benchmark_note"
+  ],
+  "title": "LANDSYNC Synthetic Ownership Claim",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

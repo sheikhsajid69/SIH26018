@@ -1,0 +1,142 @@
+{
+  "$defs": {
+    "RuleCategory": {
+      "enum": [
+        "A_VERIFIED_PROCEDURAL_MANDATE",
+        "B_CONFIGURABLE_DATA_QUALITY",
+        "C_SYNTHETIC_BENCHMARK_ASSUMPTION",
+        "D_LEGAL_INTERPRETATION_NEEDS_REVIEW"
+      ],
+      "title": "RuleCategory",
+      "type": "string"
+    },
+    "VerificationStatus": {
+      "enum": [
+        "VERIFIED_PRIMARY_SOURCE",
+        "SECONDARY_SOURCE_ONLY",
+        "NEEDS_LEGAL_REVIEW",
+        "NOT_APPLICABLE",
+        "SUPERSEDED_OR_UNCERTAIN"
+      ],
+      "title": "VerificationStatus",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "rule_id": {
+      "description": "Unique rule ID (e.g. RULE-REG-1908-SEC17, RULE-AREA-TOL-001)",
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "title": {
+      "description": "Human-readable title of legal provision or quality check",
+      "title": "Title",
+      "type": "string"
+    },
+    "jurisdiction": {
+      "description": "IN_CENTRAL, IN_KARNATAKA, TECHNICAL_COMMON",
+      "title": "Jurisdiction",
+      "type": "string"
+    },
+    "instrument_type": {
+      "description": "CENTRAL_ACT, STATE_ACT, STATE_RULE, TECHNICAL_SPECIFICATION",
+      "title": "Instrument Type",
+      "type": "string"
+    },
+    "official_source_url": {
+      "description": "Authoritative source URL (e.g. indiacode.nic.in, dharani/bhoomi)",
+      "title": "Official Source Url",
+      "type": "string"
+    },
+    "provision_reference": {
+      "description": "Specific statutory section / order clause",
+      "title": "Provision Reference",
+      "type": "string"
+    },
+    "short_neutral_summary": {
+      "description": "Objective summary of procedural requirement",
+      "title": "Short Neutral Summary",
+      "type": "string"
+    },
+    "applicable_workflow": {
+      "description": "CONVEYANCE_REGISTRATION, MUTATION, BOUNDARY_SURVEY, DATA_QUALITY",
+      "title": "Applicable Workflow",
+      "type": "string"
+    },
+    "effective_from": {
+      "description": "Date or historical statute commencement",
+      "title": "Effective From",
+      "type": "string"
+    },
+    "effective_until": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Date repealed or superseded, if any",
+      "title": "Effective Until"
+    },
+    "source_last_verified_at": {
+      "description": "Date verified against authoritative legal repository",
+      "title": "Source Last Verified At",
+      "type": "string"
+    },
+    "amendment_status": {
+      "description": "CURRENT, AMENDED, REPEALED, PROPOSED",
+      "title": "Amendment Status",
+      "type": "string"
+    },
+    "verification_status": {
+      "$ref": "#/$defs/VerificationStatus",
+      "description": "VERIFIED_PRIMARY_SOURCE, NEEDS_LEGAL_REVIEW, etc."
+    },
+    "reviewer_notes": {
+      "description": "Legal analyst review observations",
+      "title": "Reviewer Notes",
+      "type": "string"
+    },
+    "limitations": {
+      "description": "Boundary conditions and jurisdictions where rule does not apply",
+      "title": "Limitations",
+      "type": "string"
+    },
+    "dataset_scenarios_using_rule": {
+      "description": "Scenarios triggering this rule",
+      "items": {
+        "type": "string"
+      },
+      "title": "Dataset Scenarios Using Rule",
+      "type": "array"
+    },
+    "rule_category": {
+      "$ref": "#/$defs/RuleCategory",
+      "description": "A, B, C, or D category distinguishing mandates from heuristics"
+    }
+  },
+  "required": [
+    "rule_id",
+    "title",
+    "jurisdiction",
+    "instrument_type",
+    "official_source_url",
+    "provision_reference",
+    "short_neutral_summary",
+    "applicable_workflow",
+    "effective_from",
+    "source_last_verified_at",
+    "amendment_status",
+    "verification_status",
+    "reviewer_notes",
+    "limitations",
+    "dataset_scenarios_using_rule",
+    "rule_category"
+  ],
+  "title": "LANDSYNC Synthetic Rule Catalogue",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

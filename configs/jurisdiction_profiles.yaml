@@ -1,0 +1,60 @@
+jurisdiction_profiles:
+  KA_PILOT:
+    profile_id: "KA_PILOT"
+    state_name: "Karnataka (Synthetic Pilot)"
+    state_code: "KA"
+    district_code: "SYN-DIST-01"
+    district_name: "Mayura District"
+    subdistrict_or_taluk_code: "SYN-TALUK-01"
+    subdistrict_or_taluk_name: "Kalyana Taluk"
+    villages:
+      - village_code: "SYN-VIL-01"
+        village_name: "Hemavathi"
+        cadastral_crs: "EPSG:4326"
+        envelope:
+          min_lat: 12.9500
+          max_lat: 12.9900
+          min_lon: 77.5600
+          max_lon: 77.6100
+      - village_code: "SYN-VIL-02"
+        village_name: "Kaveri"
+        cadastral_crs: "EPSG:4326"
+        envelope:
+          min_lat: 12.9600
+          max_lat: 13.0000
+          min_lon: 77.6100
+          max_lon: 77.6600
+      - village_code: "SYN-VIL-03"
+        village_name: "Sharavathi"
+        cadastral_crs: "EPSG:4326"
+        envelope:
+          min_lat: 12.9100
+          max_lat: 12.9500
+          min_lon: 77.5300
+          max_lon: 77.5800
+      - village_code: "SYN-VIL-04"
+        village_name: "Netravathi"
+        cadastral_crs: "EPSG:4326"
+        envelope:
+          min_lat: 13.0000
+          max_lat: 13.0400
+          min_lon: 77.5700
+          max_lon: 77.6200
+    local_administrative_unit: "Village Panchayat / Revenue Circle"
+    local_record_terminology:
+      ror_extract: "RTC (Record of Rights, Tenancy & Crops / Pahani)"
+      mutation_extract: "Mutation Register Extract (Form 12 / MR)"
+      sketch_blueprint: "Tippani / Akarband / Cadastral Sketch"
+      sale_deed: "Registered Sale Deed (Kraya Patra)"
+      partition_deed: "Partition Deed (Vibhaga Patra)"
+      gift_deed: "Registered Gift Deed (Dhana Patra)"
+      release_deed: "Relinquishment Deed (Hakku Bidalike)"
+      mortgage_deed: "Simple / Usufructuary Mortgage Deed"
+    survey_identifier_format: "{survey_number}/{subdivision_number}"
+    area_unit_conventions:
+      primary: "acre"
+      sub_unit: "guntha"
+      ratio_guntha_to_acre: 0.025
+    source_system_profile: "Bhoomi / Kaveri-II Synthetic Bridge"
+    applicable_rule_set_version: "KA-REVENUE-V1.0"
+    notice: "100% SYNTHETIC PILOT — FICTIONAL ADMINISTRATIVE BOUNDARIES"

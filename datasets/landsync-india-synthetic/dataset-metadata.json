@@ -1,0 +1,25 @@
+{
+  "title": "LANDSYNC: Synthetic Indian Land Record Benchmark",
+  "id": "sheikhsajid69/landsync-india-synthetic",
+  "subtitle": "100% Synthetic benchmark for Indian land-record digitization, document AI, and cadastral validation",
+  "description": "Comprehensive, legally informed, and mathematically reproducible synthetic benchmark dataset for Indian land record digitization, entity resolution, Document AI, and cadastral spatial validation. Developed as part of the LANDSYNC AI system (SIH26018, Smart India Hackathon). Contains 10,000 linked parcels, 5,500 documents, 33,000 field annotations, 3,500 mutation events, 5,500 spatial features, and 2,880 stratified validation benchmark cases. 100% SYNTHETIC DATA — NOT AN OFFICIAL GOVERNMENT RECORD.",
+  "isPrivate": false,
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "keywords": [
+    "land-records",
+    "cadastral",
+    "synthetic-data",
+    "india",
+    "gis",
+    "document-ai",
+    "legal-tech",
+    "geojson",
+    "smart-india-hackathon"
+  ],
+  "collaborators": [],
+  "data": []
+}

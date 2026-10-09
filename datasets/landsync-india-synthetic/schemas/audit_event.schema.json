@@ -1,0 +1,69 @@
+{
+  "properties": {
+    "audit_event_id": {
+      "description": "Synthetic audit key (e.g. SYN-AUDIT-000001)",
+      "title": "Audit Event Id",
+      "type": "string"
+    },
+    "actor_id": {
+      "description": "Synthetic actor ID (e.g. SYN-USER-OFFICER-001)",
+      "title": "Actor Id",
+      "type": "string"
+    },
+    "actor_role": {
+      "description": "citizen, revenue_officer, administrator, system_engine",
+      "title": "Actor Role",
+      "type": "string"
+    },
+    "action_type": {
+      "description": "DOCUMENT_INGEST, VALIDATION_RUN, CASE_REVIEW, DECISION_RECORDED",
+      "title": "Action Type",
+      "type": "string"
+    },
+    "resource_type": {
+      "description": "parcel, document, validation_case, mutation",
+      "title": "Resource Type",
+      "type": "string"
+    },
+    "resource_id": {
+      "description": "ID of entity acted upon",
+      "title": "Resource Id",
+      "type": "string"
+    },
+    "event_timestamp": {
+      "description": "ISO timestamp of event",
+      "title": "Event Timestamp",
+      "type": "string"
+    },
+    "reason": {
+      "description": "Administrative justification or trigger",
+      "title": "Reason",
+      "type": "string"
+    },
+    "result": {
+      "description": "SUCCESS, REVIEW_REQUIRED, REJECTED",
+      "title": "Result",
+      "type": "string"
+    },
+    "synthetic_event_flag": {
+      "default": true,
+      "description": "Strict synthetic data flag",
+      "title": "Synthetic Event Flag",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "audit_event_id",
+    "actor_id",
+    "actor_role",
+    "action_type",
+    "resource_type",
+    "resource_id",
+    "event_timestamp",
+    "reason",
+    "result"
+  ],
+  "title": "LANDSYNC Synthetic Audit Event",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,588 @@
+{
+  "dataset_name": "landsync-india-synthetic",
+  "schema_version": "1.0.0",
+  "total_files": 58,
+  "disclaimer": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL LAND RECORD.",
+  "entries": [
+    {
+      "relative_path": "annotations/document_field_annotations.jsonl",
+      "file_format": "JSONL",
+      "row_count": 33000,
+      "column_count": null,
+      "file_size_bytes": 13298349,
+      "sha256": "994e0ef11825789219243aff88482998673246e57ab9258373eccdce3891c395",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "CHANGELOG.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2190,
+      "sha256": "e42ce500cdf911b9daaa2040d0ff3106f4f3bc76943f225d0a865832f42f0273",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "CITATION.cff",
+      "file_format": "CFF",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 878,
+      "sha256": "61fba0335778e71feafe5178b9561ee044cf9b91050e414b81d5e317864b4b38",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "CONTRIBUTING.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 1578,
+      "sha256": "e972623753f04a8a5b200e1697b1767eb8b1cc0901bc74c51c891520dca261c2",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/audit_events.csv",
+      "file_format": "CSV",
+      "row_count": 4000,
+      "column_count": 10,
+      "file_size_bytes": 722925,
+      "sha256": "eaeb9dd766dca9ce29c1714411675d6ecbd8b63bc209c4a9af336111385cfa42",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/audit_events.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 59737,
+      "sha256": "ead51abca45aa03390978f222d9545d5a711b173a2ad877b2c4e9dd1d17f84d6",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/document_fields.csv",
+      "file_format": "CSV",
+      "row_count": 33000,
+      "column_count": 14,
+      "file_size_bytes": 4894716,
+      "sha256": "f0d2811d70b5decc6588ca1e511e1763d6edcbd3fe917217674c325c6373ec00",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/document_fields.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 507542,
+      "sha256": "e1529e9daa1559bea691c6234b1329df99163bc51af3982c275d1a9df20ccf35",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/documents.csv",
+      "file_format": "CSV",
+      "row_count": 5500,
+      "column_count": 16,
+      "file_size_bytes": 1574166,
+      "sha256": "ab530f5f4e68db12622e30677e3189204103b1cdde772389a7d880ff8b715491",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/documents.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 503124,
+      "sha256": "a676e6bbe75fc1c9b91186b37d30aca38839e62f2e19b22dfa200474a7e77600",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/encumbrances.csv",
+      "file_format": "CSV",
+      "row_count": 1500,
+      "column_count": 9,
+      "file_size_bytes": 273511,
+      "sha256": "26049ab016f423f309219ee064bdf3d119630152b3989f7d7392b1b50ce13f04",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/encumbrances.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 32605,
+      "sha256": "4b32388df82e6540f4f7d3258fa2ce19ae9798930ead328cef08cc91af47a62c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/mutation_events.csv",
+      "file_format": "CSV",
+      "row_count": 3500,
+      "column_count": 13,
+      "file_size_bytes": 576643,
+      "sha256": "6892c04950bd11a0bd69fc2e99e138469053cc2a3332966bfff30ff3f16f7255",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/mutation_events.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 88607,
+      "sha256": "9c6e0086ae49375f45ab5ed8e48da83cff3ab8a1d4222145d156b64f6144138f",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/ownership_claims.csv",
+      "file_format": "CSV",
+      "row_count": 11250,
+      "column_count": 13,
+      "file_size_bytes": 2223038,
+      "sha256": "56ae9b7e91707de0cd5004ecf2711ca8dde6cadf550997d474d3980f72cee3a8",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/ownership_claims.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 294611,
+      "sha256": "9827166e69aeb45bcbfa307e86bb6d5400d39857ad0151e3cd552b817b9fbd3a",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/parcels.csv",
+      "file_format": "CSV",
+      "row_count": 10000,
+      "column_count": 20,
+      "file_size_bytes": 2526265,
+      "sha256": "ed052981cd26612b908c760b5cc8ddd5843dece9f38a59520852ac7ac0b73774",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/parcels.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 290112,
+      "sha256": "ec8c37a79243891121a2143e4caa0dd7db210e8874a8055a8dc7da6a368535eb",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/parties.csv",
+      "file_format": "CSV",
+      "row_count": 10000,
+      "column_count": 10,
+      "file_size_bytes": 2011362,
+      "sha256": "4e019271c5fd4b04e9bec8530456ebac07d4d01972446d2cfcdbe2a8c972aee7",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/parties.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 393204,
+      "sha256": "3dacd84a80c6f6b045da17a5f01092a9a1183d862bc8d20b7b04d89075f0f8ad",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/provenance.csv",
+      "file_format": "CSV",
+      "row_count": 1,
+      "column_count": 10,
+      "file_size_bytes": 489,
+      "sha256": "6938ef7da66bef7da9132c3ffee013667b1b50a9342f888c69a951977d52b231",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/provenance.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 4277,
+      "sha256": "0dc3705246966f9f293cb8c640a89bf9f340a93c77c1bda219bea51b8e8afd13",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/rule_catalogue.csv",
+      "file_format": "CSV",
+      "row_count": 17,
+      "column_count": 17,
+      "file_size_bytes": 14461,
+      "sha256": "4bde16ad9caeb43ee6cbe7602d28ac01421ab0d6a2e355296897f8d6f1441c4a",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/rule_catalogue.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 16510,
+      "sha256": "41bf2d28815cb01f426585c5a1a48689734e586dacff4f5d072b02cc9abf0b2f",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/spatial_features.csv",
+      "file_format": "CSV",
+      "row_count": 5500,
+      "column_count": 11,
+      "file_size_bytes": 1799782,
+      "sha256": "1bd74fd782e5575540dcfe111e7f24a57d10e288846f93aa1552efe57fb09522",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/spatial_features.geojson",
+      "file_format": "GEOJSON",
+      "row_count": 5500,
+      "column_count": null,
+      "file_size_bytes": 6968761,
+      "sha256": "b333ebc5a178ebd9b8e2232358b0cfe5a1fd7847fc0324cdc8719c231025dd53",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/spatial_features.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 585232,
+      "sha256": "74e1501c531cea49de6775b7595e1dad8b58dcb9326183b99c43d2155263af46",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/validation_cases.csv",
+      "file_format": "CSV",
+      "row_count": 2880,
+      "column_count": 14,
+      "file_size_bytes": 913330,
+      "sha256": "113a27d85679b0713988f6fa345677054da5f1b89590312d1777131045935ffb",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/validation_cases.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 93430,
+      "sha256": "3e6bafa1a55deaf2dcd586bde193f387fba679b7a9beda798d449a450cec0d6d",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/validation_findings.csv",
+      "file_format": "CSV",
+      "row_count": 2880,
+      "column_count": 12,
+      "file_size_bytes": 636319,
+      "sha256": "13323e1e052dba61d74d4d86f3681651620212ed6059fe1cdf00ce1e06b6d027",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "data/validation_findings.parquet",
+      "file_format": "PARQUET",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 45387,
+      "sha256": "4e8a4752b406d9c48adcd1e4e0fb82f655d8180cdb8273127a6363619bed366c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "DATA_CARD.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 4848,
+      "sha256": "e41cd1270b2cd68e46add1dd1fac375835d6fcd44414136b4bea3e2bde4dce65",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "DATA_DICTIONARY.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 16434,
+      "sha256": "0ab4f8dfce37ffc373d72e36cace808af7eda6fbd1285b6b6cafdf8e1380a57a",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "dataset-metadata.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 1071,
+      "sha256": "d5d7effead6b6a774f40e2cc49384b34890cca3ce81b0c44ee58dbe1c0dae297",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "GENERATION_METHODOLOGY.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 5166,
+      "sha256": "b8c54a843fbf4b9204dfd1c77231395a15b3c379a4271e8d3f0986573cd12ba8",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "LEGAL_SCOPE.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 7154,
+      "sha256": "46259b576caeb45555a7b3dc011570339bed67e81ee4c808e61d8fa0efd5902c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "LICENSE",
+      "file_format": "",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2472,
+      "sha256": "d0d01269b3f32910eb1b978ef4a6dfd57ea65c528059a33affb67bbe497cff10",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "notebooks/01_getting_started_landsync_synthetic.ipynb",
+      "file_format": "IPYNB",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 6718,
+      "sha256": "caa15b80a09ab6c60662c6d1de86a6dfd7cb12b57f3aa23fafd925fc5294015c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "PRIVACY_AND_SYNTHETIC_DATA.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 3136,
+      "sha256": "5543f185c954e35ea79d3e850db3f829aa108648342641b48f101b25fc3822f7",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "QUALITY_ASSURANCE.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 4110,
+      "sha256": "a2b476daaaf4f378d9fe8b610a1dd8861e62283393197c35d88e8b41277a4e7d",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "README.md",
+      "file_format": "MD",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 8767,
+      "sha256": "ce4a71246f13f24350d8aaef8d60b81fd0cdbc8a8636961b6eb4a72e2f8b170c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "reports/quality_report.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 4637,
+      "sha256": "fd4a38cafa995d3ce78248c313f16809e6b6c1c51f353f69d2ec7168e4449563",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/audit_event.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 1889,
+      "sha256": "564f7938b8d0bc839447a2bc6f8ae553876fbce1a3176f5bfe1f2b9316cc9bfe",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/document.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 3095,
+      "sha256": "e19b464346bcec08f5a0e38dda0d5760d03af9efbf4202e84870424bbf9fe884",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/document_field.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2875,
+      "sha256": "d529f3d4b0d2b0a63dd82ede7bbdc8fdce2ae31450395ec29c6ab2c866612f47",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/encumbrance.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 1928,
+      "sha256": "e5ebe01d6753b088d0c391c3b15d4a1a849759c66c355450ab2113ddafa31e7c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/mutation_event.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2818,
+      "sha256": "776eff42881afd844fb8b1f501afe9364c458fedaa442e5bc17a8d69fb3b01c3",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/ownership_claim.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2427,
+      "sha256": "bf99b6c84863c5987555324546ad2b3d15e961ac425b8cbbcf0a5a3b3845ff57",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/parcel.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 3541,
+      "sha256": "07c7fe418939f1c9dfbc626467896a624d50d3142e66bb6a7b884676122917a6",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/party.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2146,
+      "sha256": "29506e1d1ad914ea3167702e724f7759e9ef37a7fda4bee16213d2bae858cc7a",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/provenance.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 1901,
+      "sha256": "6f31de04c32af3273a4d293845f24a72a13904a51e0bdd5f847c12bb6ea69749",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/rule_catalogue.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 4198,
+      "sha256": "15fc4f1bd08f0744c38db42c4fac00e7b28ca8c79e52a84a9ba61759e4a9729f",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/spatial_feature.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2294,
+      "sha256": "560b6e4a19e8c37191bc90554bf19f1427d726356ff271b90e0388b26785573c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/validation_case.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 3102,
+      "sha256": "a550a70382bf2e6f60ff5c68878d271d756ca217a49ab3cb6a7b595457bf1603",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "schemas/validation_finding.schema.json",
+      "file_format": "JSON",
+      "row_count": null,
+      "column_count": null,
+      "file_size_bytes": 2643,
+      "sha256": "081379af331b170d3a6860a6b0f6d11fbe2e65dc4ffe14f82806cc40ad4b298d",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "splits/test_ids.csv",
+      "file_format": "CSV",
+      "row_count": 435,
+      "column_count": 6,
+      "file_size_bytes": 36676,
+      "sha256": "7d68f82c46d4a3586c877f9572eba13592f87847f81a4dd711c649afee7d3476",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "splits/train_ids.csv",
+      "file_format": "CSV",
+      "row_count": 2015,
+      "column_count": 6,
+      "file_size_bytes": 173226,
+      "sha256": "0c1d06e55f5562747d4655f4e7919bd40bb3bae6d77a8b29f471cef86ab6fa3c",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    },
+    {
+      "relative_path": "splits/validation_ids.csv",
+      "file_format": "CSV",
+      "row_count": 430,
+      "column_count": 6,
+      "file_size_bytes": 37166,
+      "sha256": "63449c8104cbbbf4d29a91963a8c7b6b9fc83075ab67f29f050aefb8f6db7599",
+      "schema_version": "1.0.0",
+      "synthetic_status": "100% SYNTHETIC DATA \u2014 NOT AN OFFICIAL GOVERNMENT RECORD"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+provenance_id,source_type,source_reference,generation_method,generator_version,generation_seed,transformation_history,creation_timestamp,license_reference,synthetic_status
+SYN-PROV-000001,DETERMINISTIC_SYNTHETIC_GENERATOR,landsync_datasets v1.0.0,PSEUDO_RANDOM_STRATIFIED_SAMPLING,1.0.0,42,SI unit conversion; GeoJSON EPSG:4326 projection; SHA-256 evidence digests.,2026-10-09T00:00:00Z,CC-BY-4.0 (Dataset) / MIT (Software Code),100% SYNTHETIC DATA — NOT AN OFFICIAL GOVERNMENT RECORD

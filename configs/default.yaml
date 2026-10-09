@@ -1,0 +1,57 @@
+dataset_name: "landsync-india-synthetic"
+dataset_title: "LANDSYNC-India: Synthetic Cadastral & Land Record Benchmark (100% Synthetic)"
+dataset_subtitle: "Reproducible benchmark for Indian land-record digitization, document AI, and cadastral validation"
+version: "1.0.0"
+generator_seed: 42
+notice: "100% SYNTHETIC DATA — NOT AN OFFICIAL GOVERNMENT RECORD"
+
+jurisdiction:
+  primary_profile: "KA_PILOT"
+  profiles_config_path: "configs/jurisdiction_profiles.yaml"
+
+quotas:
+  scenario_quotas_path: "configs/scenario_quotas.yaml"
+
+targets:
+  parcels: 10000
+  validation_cases: 2520
+  documents: 5500
+  document_fields: 32000
+  mutation_events: 3500
+  encumbrances: 1500
+  spatial_features: 5500
+  audit_events: 4000
+  compound_adversarial_cases: 530
+
+splits:
+  strategy: "group_aware"
+  group_key: "split_group_id"
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+
+paths:
+  output_root: "datasets/landsync-india-synthetic"
+  schemas_dir: "schemas"
+  data_dir: "data"
+  annotations_dir: "annotations"
+  splits_dir: "splits"
+  reports_dir: "reports"
+  notebooks_dir: "notebooks"
+
+formats:
+  csv: true
+  json: true
+  jsonl: true
+  geojson: true
+  parquet: true
+
+tolerances:
+  area_pct_match: 0.20
+  area_pct_partial: 1.00
+  area_pct_mismatch: 5.00
+  iou_match: 0.90
+  iou_partial: 0.70
+  centroid_offset_meters_match: 2.0
+  centroid_offset_meters_partial: 10.0
+  ocr_confidence_threshold: 0.80

@@ -1,0 +1,101 @@
+{
+  "properties": {
+    "mutation_event_id": {
+      "description": "Synthetic mutation key (e.g. SYN-MUT-000001)",
+      "title": "Mutation Event Id",
+      "type": "string"
+    },
+    "parcel_id": {
+      "description": "Foreign key to parcel",
+      "title": "Parcel Id",
+      "type": "string"
+    },
+    "event_type": {
+      "description": "SALE_TRANSFER, INHERITANCE_SUCCESSION, PARTITION, CONVERSION, MORTGAGE_CHARGE, RELEASE",
+      "title": "Event Type",
+      "type": "string"
+    },
+    "application_date": {
+      "description": "ISO date of mutation application (Sec 128 KLRA)",
+      "title": "Application Date",
+      "type": "string"
+    },
+    "event_date": {
+      "description": "ISO date of deed or triggering legal event",
+      "title": "Event Date",
+      "type": "string"
+    },
+    "effective_date": {
+      "description": "ISO date when mutation order took legal effect",
+      "title": "Effective Date",
+      "type": "string"
+    },
+    "recorded_date": {
+      "description": "ISO date entered into revenue register",
+      "title": "Recorded Date",
+      "type": "string"
+    },
+    "source_document_id": {
+      "description": "Foreign key to registered instrument",
+      "title": "Source Document Id",
+      "type": "string"
+    },
+    "previous_claim_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Previous ownership claim modified/extinguished",
+      "title": "Previous Claim Id"
+    },
+    "resulting_claim_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "New ownership claim created",
+      "title": "Resulting Claim Id"
+    },
+    "event_status": {
+      "description": "SANCTIONED, PENDING_OBJECTION, REJECTED, APPEALED",
+      "title": "Event Status",
+      "type": "string"
+    },
+    "event_sequence": {
+      "description": "Chronological sequence order on this parcel",
+      "title": "Event Sequence",
+      "type": "integer"
+    },
+    "benchmark_expected_outcome": {
+      "description": "MATCH, CHRONOLOGY_CONFLICT, EVIDENCE_MISSING, UNAPPROVED",
+      "title": "Benchmark Expected Outcome",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mutation_event_id",
+    "parcel_id",
+    "event_type",
+    "application_date",
+    "event_date",
+    "effective_date",
+    "recorded_date",
+    "source_document_id",
+    "event_status",
+    "event_sequence",
+    "benchmark_expected_outcome"
+  ],
+  "title": "LANDSYNC Synthetic Mutation Event",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

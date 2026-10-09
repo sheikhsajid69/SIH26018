@@ -1,0 +1,71 @@
+{
+  "properties": {
+    "party_id": {
+      "description": "Deterministic synthetic party key (e.g. SYN-PARTY-000001)",
+      "title": "Party Id",
+      "type": "string"
+    },
+    "synthetic_record_flag": {
+      "default": true,
+      "description": "Always true",
+      "title": "Synthetic Record Flag",
+      "type": "boolean"
+    },
+    "synthetic_display_name": {
+      "description": "Synthetic landowner or entity name",
+      "title": "Synthetic Display Name",
+      "type": "string"
+    },
+    "party_type": {
+      "description": "INDIVIDUAL, JOINT_FAMILY, CORPORATE_ENTITY, INSTITUTION",
+      "title": "Party Type",
+      "type": "string"
+    },
+    "name_language": {
+      "default": "en",
+      "description": "Primary name script/language",
+      "title": "Name Language",
+      "type": "string"
+    },
+    "name_variants": {
+      "description": "Fictional aliases, transliterations, honorific variants",
+      "items": {
+        "type": "string"
+      },
+      "title": "Name Variants",
+      "type": "array"
+    },
+    "identity_reference_type": {
+      "description": "SYNTHETIC_BENCHMARK_TOKEN (never real Aadhaar/PAN)",
+      "title": "Identity Reference Type",
+      "type": "string"
+    },
+    "identity_reference_value": {
+      "description": "Fictional reference value (e.g. SYN-ID-000001)",
+      "title": "Identity Reference Value",
+      "type": "string"
+    },
+    "identity_reference_is_synthetic": {
+      "default": true,
+      "description": "Strict synthetic token flag",
+      "title": "Identity Reference Is Synthetic",
+      "type": "boolean"
+    },
+    "consent_or_authority_status": {
+      "description": "SYNTHETIC_CONSENT_VERIFIED, NOT_APPLICABLE",
+      "title": "Consent Or Authority Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "party_id",
+    "synthetic_display_name",
+    "party_type",
+    "identity_reference_type",
+    "identity_reference_value",
+    "consent_or_authority_status"
+  ],
+  "title": "LANDSYNC Synthetic Party",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

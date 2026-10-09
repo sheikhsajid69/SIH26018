@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "FindingStatus": {
+      "enum": [
+        "CONSISTENT",
+        "RECORD_MISMATCH",
+        "DOCUMENT_MISSING",
+        "SPATIAL_INCONSISTENCY",
+        "CHRONOLOGY_CONFLICT",
+        "REVIEW_REQUIRED",
+        "POSSIBLE_DUPLICATE",
+        "SOURCE_CONFLICT"
+      ],
+      "title": "FindingStatus",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "finding_id": {
+      "description": "Synthetic finding ID (e.g. SYN-FIND-000001)",
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "case_id": {
+      "description": "Foreign key to validation case",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "field_name": {
+      "description": "Attribute evaluated (owner, area, survey_number, boundary, etc.)",
+      "title": "Field Name",
+      "type": "string"
+    },
+    "source_value": {
+      "description": "Value from submitted document",
+      "title": "Source Value",
+      "type": "string"
+    },
+    "comparison_value": {
+      "description": "Value from authoritative reference record",
+      "title": "Comparison Value",
+      "type": "string"
+    },
+    "normalized_source_value": {
+      "description": "Normalized source value",
+      "title": "Normalized Source Value",
+      "type": "string"
+    },
+    "normalized_comparison_value": {
+      "description": "Normalized reference value",
+      "title": "Normalized Comparison Value",
+      "type": "string"
+    },
+    "rule_id": {
+      "description": "Rule ID governing comparison",
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "finding_status": {
+      "$ref": "#/$defs/FindingStatus",
+      "description": "Neutral status (RECORD_MISMATCH, SPATIAL_INCONSISTENCY, etc.)"
+    },
+    "severity": {
+      "description": "NONE, LOW, MEDIUM, HIGH",
+      "title": "Severity",
+      "type": "string"
+    },
+    "explanation": {
+      "description": "Detailed explainable finding rationale",
+      "title": "Explanation",
+      "type": "string"
+    },
+    "review_required": {
+      "description": "Whether this individual finding mandates review",
+      "title": "Review Required",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "finding_id",
+    "case_id",
+    "field_name",
+    "source_value",
+    "comparison_value",
+    "normalized_source_value",
+    "normalized_comparison_value",
+    "rule_id",
+    "finding_status",
+    "severity",
+    "explanation",
+    "review_required"
+  ],
+  "title": "LANDSYNC Synthetic Validation Finding",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

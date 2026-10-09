@@ -1,0 +1,105 @@
+{
+  "properties": {
+    "document_id": {
+      "description": "Deterministic document ID (e.g. SYN-DOC-000001)",
+      "title": "Document Id",
+      "type": "string"
+    },
+    "parcel_id": {
+      "description": "Foreign key to parcel",
+      "title": "Parcel Id",
+      "type": "string"
+    },
+    "document_type": {
+      "description": "RECORD_OF_RIGHTS, SALE_DEED, PARTITION_DEED, GIFT_DEED, MORTGAGE_DEED, CADASTRAL_SKETCH",
+      "title": "Document Type",
+      "type": "string"
+    },
+    "synthetic_filename": {
+      "description": "Standardized synthetic filename",
+      "title": "Synthetic Filename",
+      "type": "string"
+    },
+    "language": {
+      "default": "en",
+      "description": "Document language (en, kn, hi)",
+      "title": "Language",
+      "type": "string"
+    },
+    "document_date": {
+      "description": "ISO date of document execution/issue",
+      "title": "Document Date",
+      "type": "string"
+    },
+    "registration_reference": {
+      "description": "Synthetic book/volume/page or sro reference",
+      "title": "Registration Reference",
+      "type": "string"
+    },
+    "issuing_office_type": {
+      "description": "SUB_REGISTRAR_OFFICE, TEHSILDAR_OFFICE, SURVEY_SETTLEMENT_OFFICE",
+      "title": "Issuing Office Type",
+      "type": "string"
+    },
+    "source_record_reference": {
+      "description": "Synthetic office archive reference",
+      "title": "Source Record Reference",
+      "type": "string"
+    },
+    "page_count": {
+      "description": "Number of pages in synthetic bundle",
+      "title": "Page Count",
+      "type": "integer"
+    },
+    "mime_type": {
+      "description": "text/plain, application/pdf, image/png",
+      "title": "Mime Type",
+      "type": "string"
+    },
+    "document_quality": {
+      "description": "PRISTINE, CLEAN, SCANNED_FAINT, OCR_DEGRADED",
+      "title": "Document Quality",
+      "type": "string"
+    },
+    "synthetic_document_flag": {
+      "default": true,
+      "description": "Strict synthetic data flag",
+      "title": "Synthetic Document Flag",
+      "type": "boolean"
+    },
+    "content_hash": {
+      "description": "SHA-256 digest of document content",
+      "title": "Content Hash",
+      "type": "string"
+    },
+    "extraction_status": {
+      "description": "EXTRACTED, EXTRACTION_FAILED, UNPROCESSED",
+      "title": "Extraction Status",
+      "type": "string"
+    },
+    "provenance_id": {
+      "description": "Foreign key to provenance record",
+      "title": "Provenance Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "document_id",
+    "parcel_id",
+    "document_type",
+    "synthetic_filename",
+    "document_date",
+    "registration_reference",
+    "issuing_office_type",
+    "source_record_reference",
+    "page_count",
+    "mime_type",
+    "document_quality",
+    "content_hash",
+    "extraction_status",
+    "provenance_id"
+  ],
+  "title": "LANDSYNC Synthetic Document",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,283 @@
+version: "1.0.0"
+target_cases_total: 2520
+
+scenario_quotas:
+  # 1. Core Consistency
+  FULL_MATCH:
+    count: 400
+    difficulty: "EASY"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MATCH"
+    review_required: false
+    description: "Fully consistent records across document and authority registers"
+  
+  OWNER_NAME_VARIATION:
+    count: 100
+    difficulty: "MEDIUM"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "PARTIAL_MATCH"
+    review_required: false
+    description: "Acceptable name variations, honorifics, or transliteration differences"
+
+  OWNER_NAME_MISMATCH:
+    count: 100
+    difficulty: "MEDIUM"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MISMATCH"
+    review_required: true
+    description: "Substantive owner name conflict between deed and revenue records"
+
+  AREA_MISMATCH:
+    count: 120
+    difficulty: "MEDIUM"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MISMATCH"
+    review_required: true
+    description: "Discrepancy in extent greater than tolerance threshold"
+
+  UNIT_CONVERSION_AMBIGUITY:
+    count: 80
+    difficulty: "HARD"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Regional ambiguous units (e.g. bigha, biswa) requiring Rule 13 protection"
+
+  SURVEY_NUMBER_MISMATCH:
+    count: 90
+    difficulty: "MEDIUM"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MISMATCH"
+    review_required: true
+    description: "Conflicting primary survey numbers between deed and RTC"
+
+  SUBDIVISION_MISMATCH:
+    count: 70
+    difficulty: "MEDIUM"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MISMATCH"
+    review_required: true
+    description: "Hissa / subdivision number mismatch (e.g., /1 vs /2)"
+
+  PLOT_MISMATCH:
+    count: 50
+    difficulty: "EASY"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MISMATCH"
+    review_required: true
+    description: "Plot or layout number conflict in non-agricultural parcels"
+
+  VILLAGE_MISMATCH:
+    count: 40
+    difficulty: "EASY"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MISMATCH"
+    review_required: true
+    description: "Discrepancy in administrative village or revenue circle"
+
+  MISSING_FIELD:
+    count: 80
+    difficulty: "EASY"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MISSING"
+    review_required: true
+    description: "Key cadastral or party field missing from submitted instrument"
+
+  DUPLICATE_DOCUMENT:
+    count: 50
+    difficulty: "EASY"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "MATCH"
+    review_required: false
+    description: "Exact duplicate document upload identified via SHA-256 digest"
+
+  STALE_RECORD:
+    count: 40
+    difficulty: "MEDIUM"
+    category: "CORE_CONSISTENCY"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Outdated revenue extract presented where a subsequent mutation occurred"
+
+  # 2. Ownership and Transactions
+  CO_OWNERSHIP_INCONSISTENCY:
+    count: 70
+    difficulty: "HARD"
+    category: "OWNERSHIP_AND_TRANSACTIONS"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Undivided co-parcenary share sum does not equal 1.0 or single party claims entire parcel"
+
+  INHERITANCE_COMPETING_CLAIM:
+    count: 60
+    difficulty: "HARD"
+    category: "OWNERSHIP_AND_TRANSACTIONS"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Succession claim conflicting with registered testamentary instrument or class-I heirs"
+
+  MUTATION_PENDING_UNAPPROVED:
+    count: 50
+    difficulty: "MEDIUM"
+    category: "OWNERSHIP_AND_TRANSACTIONS"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Mutation notice published but order under statutory 30-day objection period"
+
+  MUTATION_CHRONOLOGY_CONFLICT:
+    count: 50
+    difficulty: "HARD"
+    category: "OWNERSHIP_AND_TRANSACTIONS"
+    expected_outcome: "MISMATCH"
+    review_required: true
+    description: "Mutation effective date precedes prerequisite registered conveyance instrument"
+
+  INCOMPLETE_TRANSFER_EVIDENCE:
+    count: 50
+    difficulty: "MEDIUM"
+    category: "OWNERSHIP_AND_TRANSACTIONS"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Chain of title transfer missing intermediate link document"
+
+  # 3. Encumbrances and Interests
+  UNDISCLOSED_MORTGAGE:
+    count: 60
+    difficulty: "HARD"
+    category: "ENCUMBRANCES_AND_INTERESTS"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Active bank mortgage or hypothecation recorded in revenue register not mentioned in deed"
+
+  EASEMENT_RESTRICTION_CONFLICT:
+    count: 50
+    difficulty: "HARD"
+    category: "ENCUMBRANCES_AND_INTERESTS"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Dominant/servient right-of-way easement documented in survey sketch omitted in transfer"
+
+  RELEASE_DATE_AMBIGUITY:
+    count: 40
+    difficulty: "MEDIUM"
+    category: "ENCUMBRANCES_AND_INTERESTS"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Discharge deed or release voucher date is ambiguous or incomplete"
+
+  # 4. Spatial Validation
+  SPATIAL_EXTENT_VARIANCE:
+    count: 90
+    difficulty: "MEDIUM"
+    category: "SPATIAL_VALIDATION"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Polygon area computed from geometry deviates > 5% from schedule textual area"
+
+  SPATIAL_OVERLAP_ANOMALY:
+    count: 70
+    difficulty: "HARD"
+    category: "SPATIAL_VALIDATION"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Cadastral boundary overlaps with adjacent parcel or reserved common land"
+
+  INVALID_GEOMETRY_RING:
+    count: 60
+    difficulty: "MEDIUM"
+    category: "SPATIAL_VALIDATION"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "GeoJSON ring not closed or self-intersecting bow-tie polygon"
+
+  CRS_OR_COORDINATE_SHIFT:
+    count: 50
+    difficulty: "HARD"
+    category: "SPATIAL_VALIDATION"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Coordinate inversion (lat/lon reversed) or datum offset error"
+
+  SLIVER_OR_GAP_DISCREPANCY:
+    count: 50
+    difficulty: "HARD"
+    category: "SPATIAL_VALIDATION"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Narrow sliver polygon or unexplained gap between adjacent surveyed hissas"
+
+  # 5. Document AI and Extraction Quality
+  OCR_NOISE_TRANSCRIPTION:
+    count: 80
+    difficulty: "MEDIUM"
+    category: "DOCUMENT_AI"
+    expected_outcome: "PARTIAL_MATCH"
+    review_required: false
+    description: "Simulated OCR character substitutions (e.g. 0/O, 1/l, 8/B) with confident fuzzy resolution"
+
+  LOW_CONFIDENCE_EXTRACTION:
+    count: 70
+    difficulty: "MEDIUM"
+    category: "DOCUMENT_AI"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Extracted value matches text but model confidence is below 80% threshold (Rule 8)"
+
+  MISSING_SCHEDULE_PAGE:
+    count: 50
+    difficulty: "EASY"
+    category: "DOCUMENT_AI"
+    expected_outcome: "MISSING"
+    review_required: true
+    description: "Deed boundary schedule page omitted from uploaded document bundle"
+
+  # 6. Land Classification and Planning
+  LAND_USE_CONFLICT_CONVERSION:
+    count: 60
+    difficulty: "HARD"
+    category: "LAND_CLASSIFICATION"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Commercial/industrial claim without valid Section 95 non-agricultural conversion order"
+
+  PLANNING_ECO_RESTRICTION_OVERLAP:
+    count: 50
+    difficulty: "HARD"
+    category: "LAND_CLASSIFICATION"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Cadastral parcel falls inside protected lake buffer or eco-sensitive zone"
+
+  # 7. Governance and Audit
+  UNAUTHORIZED_MUTATION_ATTEMPT:
+    count: 40
+    difficulty: "HARD"
+    category: "GOVERNANCE"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Synthetic test scenario simulating role violation or invalid transition attempt"
+
+  AUDIT_TRAIL_GAP:
+    count: 30
+    difficulty: "MEDIUM"
+    category: "GOVERNANCE"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Unsigned or non-traceable historical ledger transition in legacy digitized extract"
+
+  # 8. Compound and Adversarial Cases
+  MULTI_FAULT_COMPOUND:
+    count: 250
+    difficulty: "ADVERSARIAL"
+    category: "COMPOUND"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Compound multi-variable discrepancies across area, boundary sketch, and party names"
+
+  ADVERSARIAL_BORDERLINE:
+    count: 280
+    difficulty: "ADVERSARIAL"
+    category: "COMPOUND"
+    expected_outcome: "REVIEW_REQUIRED"
+    review_required: true
+    description: "Subtle edge cases including complex heir coparcenary ratios and marginal tolerances"

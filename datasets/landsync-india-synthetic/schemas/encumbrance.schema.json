@@ -1,0 +1,70 @@
+{
+  "properties": {
+    "interest_id": {
+      "description": "Synthetic interest key (e.g. SYN-INT-000001)",
+      "title": "Interest Id",
+      "type": "string"
+    },
+    "parcel_id": {
+      "description": "Foreign key to parcel",
+      "title": "Parcel Id",
+      "type": "string"
+    },
+    "interest_type": {
+      "description": "MORTGAGE_SIMPLE, MORTGAGE_EQUITABLE, EASEMENT_RIGHT_OF_WAY, STATUTORY_CHARGE, ACQUISITION_NOTICE",
+      "title": "Interest Type",
+      "type": "string"
+    },
+    "source_document_id": {
+      "description": "Foreign key to document creating/recording interest",
+      "title": "Source Document Id",
+      "type": "string"
+    },
+    "effective_from": {
+      "description": "ISO start date of charge/interest",
+      "title": "Effective From",
+      "type": "string"
+    },
+    "effective_until": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "ISO end/discharge date if released",
+      "title": "Effective Until"
+    },
+    "status": {
+      "description": "ACTIVE, DISCHARGED, DISPUTED, UNCERTAIN",
+      "title": "Status",
+      "type": "string"
+    },
+    "source_verification_status": {
+      "description": "REGISTERED_CHARGE, REVENUE_NOTED, UNVERIFIED",
+      "title": "Source Verification Status",
+      "type": "string"
+    },
+    "benchmark_note": {
+      "description": "Synthetic scenario context",
+      "title": "Benchmark Note",
+      "type": "string"
+    }
+  },
+  "required": [
+    "interest_id",
+    "parcel_id",
+    "interest_type",
+    "source_document_id",
+    "effective_from",
+    "status",
+    "source_verification_status",
+    "benchmark_note"
+  ],
+  "title": "LANDSYNC Synthetic Encumbrance",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
