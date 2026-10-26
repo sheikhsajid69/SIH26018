@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌿 LANDSYNC AI
+# LANDSYNC AI
 ### Intelligent Land Record Digitalisation, Validation and Spatial Intelligence Platform
 
 [![Smart India Hackathon 2026](https://img.shields.io/badge/SIH-2026-00684a?style=for-the-badge&logo=target&logoColor=white)](https://www.sih.gov.in/)
