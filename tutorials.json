@@ -1,0 +1,618 @@
+{
+  "schema_version": "1.0.0",
+  "project": "LANDSYNC AI",
+  "purpose": "Practical tutorials for experiments with synthetic land records, validation workflows, geospatial checks, document extraction, model evaluation, and dataset publication.",
+  "data_policy": {
+    "default_mode": "synthetic_only",
+    "privacy": "Never include real Aadhaar numbers, private land records, personal identifiers, credentials, or other sensitive personal data.",
+    "authority_boundary": "This is an experimental decision-support project, not an official land registry or a substitute for verification by the competent revenue authority.",
+    "legal_traceability": "Mark rules as verified only when linked to a current authoritative source and reviewed for jurisdiction and effective date. Label synthetic assumptions explicitly."
+  },
+  "validation_statuses": [
+    "MATCH",
+    "PARTIAL_MATCH",
+    "MISMATCH",
+    "MISSING",
+    "REVIEW_REQUIRED"
+  ],
+  "tutorials": [
+    {
+      "id": "TUT-001",
+      "title": "Generate a Reproducible Synthetic Land-Record Dataset",
+      "category": "dataset_generation",
+      "difficulty": "beginner",
+      "objective": "Generate fictional parcel, survey, document, and transaction records that can be recreated with a fixed random seed.",
+      "prerequisites": [
+        "Python 3.10+",
+        "A defined dataset schema"
+      ],
+      "steps": [
+        "Define field names, types, required fields, and allowed values before generating records.",
+        "Use fictional names and synthetic identifiers; never derive identifiers from real people or official records.",
+        "Set and record a random seed so the same configuration can reproduce the dataset.",
+        "Generate normal cases and controlled edge cases, including missing fields, duplicate references, and conflicting area values.",
+        "Export JSONL or CSV and write a manifest with row counts, schema version, seed, and generation timestamp."
+      ],
+      "experiment_ideas": [
+        "Compare datasets with 100, 1000, and 10000 records.",
+        "Vary the rate of missing and conflicting fields.",
+        "Regenerate the same dataset twice and compare hashes."
+      ],
+      "expected_outputs": [
+        "synthetic_parcels.jsonl",
+        "dataset_manifest.json"
+      ],
+      "validation_checks": [
+        "Every record conforms to the declared schema.",
+        "The seed and generator configuration are recorded.",
+        "All generated records are labelled synthetic."
+      ],
+      "safety_notes": [
+        "Do not use real Aadhaar numbers or real personal data.",
+        "Do not imply fictional parcel identifiers refer to official records."
+      ],
+      "tags": [
+        "synthetic-data",
+        "reproducibility",
+        "JSONL",
+        "Python"
+      ]
+    },
+    {
+      "id": "TUT-002",
+      "title": "Design Relational Schemas and Check Referential Integrity",
+      "category": "data_modeling",
+      "difficulty": "intermediate",
+      "objective": "Model parcels, parties, document references, survey records, and transaction events without confusing person identity with parcel identity.",
+      "prerequisites": [
+        "Basic SQL or JSON knowledge",
+        "Synthetic sample records"
+      ],
+      "steps": [
+        "Define separate entities for parcels, parties, documents, survey observations, and transaction events.",
+        "Assign stable synthetic IDs and define relationships between entities.",
+        "Declare unique, required, optional, and repeatable fields.",
+        "Check orphaned references, duplicate primary IDs, and invalid relationship cardinality.",
+        "Document the difference between parcel boundaries, ownership claims, and historical transactions."
+      ],
+      "experiment_ideas": [
+        "Inject orphaned document references and measure detection.",
+        "Compare normalized relational records with nested JSON.",
+        "Test joint ownership and multiple historical transactions."
+      ],
+      "expected_outputs": [
+        "schema.json",
+        "synthetic_relational_fixture.json",
+        "integrity_report.json"
+      ],
+      "validation_checks": [
+        "All references resolve or are explicitly marked unresolved.",
+        "Primary IDs are unique.",
+        "A person identifier is never used as the parcel primary key."
+      ],
+      "safety_notes": [
+        "Use fictional parties and identifiers.",
+        "Schema validity does not prove legal ownership."
+      ],
+      "tags": [
+        "schema",
+        "referential-integrity",
+        "data-modeling"
+      ]
+    },
+    {
+      "id": "TUT-003",
+      "title": "Normalize Land-Record Fields and Units",
+      "category": "data_quality",
+      "difficulty": "beginner",
+      "objective": "Standardize text, dates, units, and field formats while retaining original values for auditability.",
+      "prerequisites": [
+        "A sample synthetic dataset"
+      ],
+      "steps": [
+        "Preserve each source value in a raw or source-value field.",
+        "Create normalized fields for whitespace, casing, date formats, and known spelling variants.",
+        "Define explicit area-unit conversions and store both original and converted units.",
+        "Flag ambiguous dates, unsupported units, and values outside configured bounds.",
+        "Record each transformation and its rule version in a log."
+      ],
+      "experiment_ideas": [
+        "Measure normalization accuracy on noisy synthetic fields.",
+        "Test equivalent areas expressed in different supported units.",
+        "Compare strict rejection with review-required handling for ambiguous values."
+      ],
+      "expected_outputs": [
+        "normalized_records.jsonl",
+        "normalization_log.jsonl"
+      ],
+      "validation_checks": [
+        "Raw values remain available.",
+        "Unit conversions are tested against known examples.",
+        "Ambiguous values are flagged rather than silently guessed."
+      ],
+      "safety_notes": [
+        "Do not silently overwrite source evidence.",
+        "Verify jurisdiction-specific units and conventions before real-world use."
+      ],
+      "tags": [
+        "normalization",
+        "units",
+        "data-quality",
+        "audit-log"
+      ]
+    },
+    {
+      "id": "TUT-004",
+      "title": "Match Parcel References Across Synthetic Documents",
+      "category": "record_linkage",
+      "difficulty": "intermediate",
+      "objective": "Compare parcel references across sources and explain why records match or conflict.",
+      "prerequisites": [
+        "Normalized synthetic records",
+        "Defined validation statuses"
+      ],
+      "steps": [
+        "Choose candidate fields such as synthetic parcel ID, survey reference, village code, and document date.",
+        "Define exact-match rules before introducing fuzzy matching.",
+        "Generate pairs with known labels: match, partial match, mismatch, missing, and review required.",
+        "Run matching rules and store field-level comparisons and rule identifiers.",
+        "Return an explanation and evidence references for each result."
+      ],
+      "experiment_ideas": [
+        "Compare exact matching with weighted scoring.",
+        "Vary typo and missing-field rates.",
+        "Measure false matches when only a weak field agrees."
+      ],
+      "expected_outputs": [
+        "candidate_pairs.jsonl",
+        "match_results.jsonl",
+        "matching_metrics.json"
+      ],
+      "validation_checks": [
+        "Every result has a status and explanation.",
+        "Conflicts are not hidden by an overall score.",
+        "Ambiguous cases can be routed to human review."
+      ],
+      "safety_notes": [
+        "A technical match is not a legal ownership determination.",
+        "Do not merge records solely because names are similar."
+      ],
+      "tags": [
+        "record-linkage",
+        "matching",
+        "explainability"
+      ]
+    },
+    {
+      "id": "TUT-005",
+      "title": "Create Ground-Truth Labels for Validation Experiments",
+      "category": "evaluation",
+      "difficulty": "intermediate",
+      "objective": "Build a labelled test set that measures validation performance and distinguishes automated findings from human review.",
+      "prerequisites": [
+        "Synthetic source records",
+        "Documented validation rules"
+      ],
+      "steps": [
+        "Write a labelling guide defining MATCH, PARTIAL_MATCH, MISMATCH, MISSING, and REVIEW_REQUIRED.",
+        "Create balanced examples, including edge cases and insufficient-evidence cases.",
+        "Keep expected labels separate from model inputs to prevent label leakage.",
+        "Have an independent reviewer or rule set audit a sample of labels.",
+        "Version the label guide and record the rationale for each label."
+      ],
+      "experiment_ideas": [
+        "Compare performance by status class.",
+        "Measure reviewer agreement on ambiguous examples.",
+        "Test whether a model over-predicts MATCH when one field agrees."
+      ],
+      "expected_outputs": [
+        "label_guide.md",
+        "ground_truth.jsonl",
+        "label_audit.json"
+      ],
+      "validation_checks": [
+        "Each example has a documented expected label.",
+        "Label fields are excluded from inference inputs.",
+        "Ambiguous cases are represented rather than discarded."
+      ],
+      "safety_notes": [
+        "Labels describe synthetic experiments, not official legal determinations."
+      ],
+      "tags": [
+        "ground-truth",
+        "annotation",
+        "classification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "TUT-006",
+      "title": "Validate Synthetic Parcel Geometry with GeoJSON",
+      "category": "geospatial",
+      "difficulty": "intermediate",
+      "objective": "Check synthetic parcel polygons for geometry validity, coordinate ranges, and area consistency.",
+      "prerequisites": [
+        "GeoJSON basics",
+        "A geospatial library such as Shapely or GeoPandas"
+      ],
+      "steps": [
+        "Generate clearly fictional polygons that do not expose a real private parcel.",
+        "Declare the coordinate reference system; GeoJSON commonly uses WGS 84 longitude and latitude.",
+        "Check coordinate ranges, ring closure, polygon validity, and empty geometries.",
+        "Calculate area in a suitable projected coordinate system or with an appropriate geodesic method; do not treat square degrees as square metres.",
+        "Compare calculated area with the synthetic declared area using a documented tolerance."
+      ],
+      "experiment_ideas": [
+        "Inject self-intersections, open rings, and out-of-range coordinates.",
+        "Compare declared and computed areas under different tolerances.",
+        "Test transformations between geographic and projected coordinate systems."
+      ],
+      "expected_outputs": [
+        "synthetic_parcels.geojson",
+        "geometry_validation.json"
+      ],
+      "validation_checks": [
+        "CRS assumptions are recorded.",
+        "Invalid geometries are flagged.",
+        "Area calculations document method and unit."
+      ],
+      "safety_notes": [
+        "These checks do not certify legal boundaries or replace survey and authority verification."
+      ],
+      "tags": [
+        "GeoJSON",
+        "GIS",
+        "geometry",
+        "CRS",
+        "area"
+      ]
+    },
+    {
+      "id": "TUT-007",
+      "title": "Benchmark OCR and Document-Field Extraction",
+      "category": "document_ai",
+      "difficulty": "intermediate",
+      "objective": "Evaluate extraction of selected fields from synthetic scans against annotated ground truth.",
+      "prerequisites": [
+        "Synthetic sample documents or generated document images",
+        "A field annotation format"
+      ],
+      "steps": [
+        "Create synthetic document images with fictional values, varied layouts, and varied scan quality.",
+        "Annotate expected field values and bounding boxes where applicable.",
+        "Run OCR or extraction and store raw text separately from parsed fields.",
+        "Normalize extracted values using documented rules and compare them field by field with ground truth.",
+        "Report exact-match accuracy, character error rate where relevant, and omission, substitution, and field-confusion errors."
+      ],
+      "experiment_ideas": [
+        "Vary blur, rotation, contrast, and resolution.",
+        "Compare layouts and fonts where licensing permits.",
+        "Measure field-level accuracy for dates, area values, and reference numbers."
+      ],
+      "expected_outputs": [
+        "synthetic_document_images/",
+        "field_annotations.jsonl",
+        "ocr_benchmark.json"
+      ],
+      "validation_checks": [
+        "Raw OCR output is preserved.",
+        "Metrics use held-out annotations.",
+        "Extraction uncertainty is surfaced."
+      ],
+      "safety_notes": [
+        "Do not upload confidential real documents to unapproved services.",
+        "OCR output is a candidate extraction, not verified evidence."
+      ],
+      "tags": [
+        "OCR",
+        "document-extraction",
+        "benchmark",
+        "computer-vision"
+      ]
+    },
+    {
+      "id": "TUT-008",
+      "title": "Represent Transaction Chronology and Conflicting Events",
+      "category": "temporal_validation",
+      "difficulty": "intermediate",
+      "objective": "Represent synthetic transaction events as a timeline and detect date-ordering or reference inconsistencies.",
+      "prerequisites": [
+        "Synthetic parcel and document records",
+        "Basic date handling"
+      ],
+      "steps": [
+        "Represent each event with a synthetic event ID, parcel reference, event type, date, source reference, and provenance.",
+        "Keep event occurrence dates separate from ingestion and processing timestamps.",
+        "Define checks for missing dates, configured impossible sequences, and duplicate event references.",
+        "Generate conflicting and incomplete timelines for testing.",
+        "Explain the triggered rule and route unresolved legal or factual conflicts to review."
+      ],
+      "experiment_ideas": [
+        "Inject out-of-order dates and duplicate events.",
+        "Test date-format handling.",
+        "Compare strict chronology rules with review-required handling for uncertain event types."
+      ],
+      "expected_outputs": [
+        "transaction_events.jsonl",
+        "timeline_results.jsonl"
+      ],
+      "validation_checks": [
+        "Source and processing timestamps are distinct.",
+        "Events are not silently deleted to make timelines consistent.",
+        "Each issue includes a rule reference."
+      ],
+      "safety_notes": [
+        "Chronology checks alone do not establish title, priority, or legal effect."
+      ],
+      "tags": [
+        "transactions",
+        "timeline",
+        "provenance",
+        "dates"
+      ]
+    },
+    {
+      "id": "TUT-009",
+      "title": "Build a Traceable Validation-Rule Catalogue",
+      "category": "rules_and_governance",
+      "difficulty": "intermediate",
+      "objective": "Make validation rules versioned, testable, explainable, and traceable to verified sources or explicitly labelled synthetic assumptions.",
+      "prerequisites": [
+        "Initial validation rules",
+        "A source-tracking format"
+      ],
+      "steps": [
+        "Give every rule a stable ID, title, description, severity, applicable fields, and version.",
+        "Record jurisdiction, source title, official URL, publication or effective date, and review status for legal or administrative sources.",
+        "Clearly mark unverified, illustrative, or synthetic rules; do not present them as law.",
+        "Create positive, negative, and boundary tests for every rule.",
+        "Include rule IDs and explanations in results alongside the evidence fields used."
+      ],
+      "experiment_ideas": [
+        "Compare results before and after a rule-version change.",
+        "Check whether each result traces to a rule version.",
+        "Test behaviour when a source is missing or out of date."
+      ],
+      "expected_outputs": [
+        "rule_catalogue.json",
+        "rule_test_cases.jsonl",
+        "source_review_log.json"
+      ],
+      "validation_checks": [
+        "Every rule has a stable ID and version.",
+        "Legal claims have a traceable authoritative source and review status.",
+        "Synthetic assumptions are distinguished from verified requirements."
+      ],
+      "safety_notes": [
+        "Do not invent citations, statutes, or official integrations.",
+        "This catalogue is not legal advice."
+      ],
+      "tags": [
+        "rules-engine",
+        "legal-traceability",
+        "governance",
+        "explainability"
+      ]
+    },
+    {
+      "id": "TUT-010",
+      "title": "Split Data Without Leakage",
+      "category": "machine_learning",
+      "difficulty": "intermediate",
+      "objective": "Create training, validation, and test partitions that avoid related records leaking across splits.",
+      "prerequisites": [
+        "Labelled synthetic dataset",
+        "A stable group or source identifier"
+      ],
+      "steps": [
+        "Identify grouping keys such as parcel family, document template, or generated case lineage.",
+        "Split by group when related records could otherwise appear in multiple partitions.",
+        "Stratify by status where practical without breaking group boundaries.",
+        "Fit normalization, vocabulary, and other learned preprocessing on training data only.",
+        "Record split seed, proportions, group keys, and class distributions in a manifest."
+      ],
+      "experiment_ideas": [
+        "Compare random-row splits with group-aware splits.",
+        "Measure performance after removing near-duplicates from test data.",
+        "Repeat experiments with multiple seeds."
+      ],
+      "expected_outputs": [
+        "train.jsonl",
+        "validation.jsonl",
+        "test.jsonl",
+        "split_manifest.json"
+      ],
+      "validation_checks": [
+        "No group appears in multiple partitions.",
+        "Preprocessing is fitted on training data only.",
+        "The split is reproducible from its manifest."
+      ],
+      "safety_notes": [
+        "Strong synthetic-data scores do not guarantee performance on real-world records."
+      ],
+      "tags": [
+        "train-test-split",
+        "leakage",
+        "machine-learning",
+        "reproducibility"
+      ]
+    },
+    {
+      "id": "TUT-011",
+      "title": "Evaluate Validation Models and Rules",
+      "category": "model_evaluation",
+      "difficulty": "intermediate",
+      "objective": "Measure classification quality and error patterns instead of relying on overall accuracy alone.",
+      "prerequisites": [
+        "Held-out labelled test set",
+        "Predicted labels"
+      ],
+      "steps": [
+        "Calculate a confusion matrix for all supported validation statuses.",
+        "Report per-class precision, recall, and F1, plus macro and weighted averages where appropriate.",
+        "Inspect false MATCH outcomes separately.",
+        "For scored predictions, evaluate calibration and choose review thresholds using validation data only.",
+        "Publish limitations, test-set composition, and failure examples with the metrics."
+      ],
+      "experiment_ideas": [
+        "Compare rule-based, heuristic, and machine-learning baselines.",
+        "Tune review thresholds and report review workload.",
+        "Evaluate performance as missing fields and OCR errors increase."
+      ],
+      "expected_outputs": [
+        "evaluation_metrics.json",
+        "confusion_matrix.csv",
+        "error_analysis.jsonl"
+      ],
+      "validation_checks": [
+        "Metrics use held-out data.",
+        "Per-class results are reported.",
+        "Thresholds are not tuned on the final test set."
+      ],
+      "safety_notes": [
+        "Model confidence is not legal confidence.",
+        "Keep human review for ambiguous or high-impact conflicts."
+      ],
+      "tags": [
+        "precision",
+        "recall",
+        "F1",
+        "confusion-matrix",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "TUT-012",
+      "title": "Audit Dataset Quality, Privacy, and Reproducibility",
+      "category": "data_governance",
+      "difficulty": "intermediate",
+      "objective": "Produce a quality report and provenance manifest before sharing a dataset.",
+      "prerequisites": [
+        "Generated dataset",
+        "Dataset schema"
+      ],
+      "steps": [
+        "Check required fields, types, allowed values, duplicate IDs, and cross-record references.",
+        "Scan for accidental personal data, real identifiers, secrets, local paths, and unintended metadata.",
+        "Calculate file checksums and record schema and generator versions.",
+        "Report class balance, missingness, duplicate rates, and known limitations.",
+        "Keep a machine-readable manifest alongside a human-readable dataset card."
+      ],
+      "experiment_ideas": [
+        "Inject known defects and verify the audit catches them.",
+        "Compare schema versions and generate a migration report.",
+        "Check reproducibility using the same seed."
+      ],
+      "expected_outputs": [
+        "quality_report.json",
+        "dataset_manifest.json",
+        "dataset_card.md"
+      ],
+      "validation_checks": [
+        "Published files are enumerated in the manifest.",
+        "Quality checks have pass/fail outcomes.",
+        "Synthetic status and limitations are documented."
+      ],
+      "safety_notes": [
+        "Do not publish private records or credentials.",
+        "Audit synthetic data for accidentally copied real information."
+      ],
+      "tags": [
+        "privacy",
+        "data-quality",
+        "checksums",
+        "dataset-card"
+      ]
+    },
+    {
+      "id": "TUT-013",
+      "title": "Prepare a Kaggle-Ready Dataset Package",
+      "category": "dataset_publication",
+      "difficulty": "beginner",
+      "objective": "Package synthetic experiments with clear documentation, reproducible files, and responsible-use notes.",
+      "prerequisites": [
+        "Audited dataset",
+        "Quality report",
+        "Dataset manifest"
+      ],
+      "steps": [
+        "Choose file names and formats such as CSV, JSONL, or GeoJSON according to the data structure.",
+        "Include a README or dataset card covering purpose, generation method, fields, limitations, and intended use.",
+        "Include a schema, validation report, licence decision, and reproducibility details.",
+        "Check that examples are synthetic and do not imply unsupported official endorsement.",
+        "Review Kaggle's current upload, licensing, privacy, and content requirements before publishing."
+      ],
+      "experiment_ideas": [
+        "Compare CSV and JSONL usability.",
+        "Ask another person to reproduce an experiment from the published instructions.",
+        "Run a clean-environment smoke test."
+      ],
+      "expected_outputs": [
+        "README.md",
+        "dataset_card.md",
+        "schema.json",
+        "dataset_manifest.json",
+        "data/"
+      ],
+      "validation_checks": [
+        "Files match the manifest.",
+        "Licence and source statements are accurate.",
+        "Synthetic status and limitations are clearly disclosed."
+      ],
+      "safety_notes": [
+        "Do not imply government provenance or legal authority unless demonstrably true.",
+        "Verify current platform requirements before uploading."
+      ],
+      "tags": [
+        "Kaggle",
+        "publication",
+        "documentation",
+        "reproducibility"
+      ]
+    },
+    {
+      "id": "TUT-014",
+      "title": "Integrate Synthetic Fixtures into the LANDSYNC AI Application",
+      "category": "application_integration",
+      "difficulty": "intermediate",
+      "objective": "Use a small versioned synthetic fixture set to test API and UI validation flows.",
+      "prerequisites": [
+        "LANDSYNC AI application",
+        "Documented API contract",
+        "Synthetic fixtures"
+      ],
+      "steps": [
+        "Create a fixture pack with at least one example for each validation status.",
+        "Validate fixtures against the backend schema before importing them.",
+        "Use a development-only loader or test fixture mechanism, not production data.",
+        "Test response fields, evidence references, rule IDs, explanations, and review flags.",
+        "Add regression tests to preserve expected behaviour as the application changes."
+      ],
+      "experiment_ideas": [
+        "Test missing and malformed request fields.",
+        "Check that the UI distinguishes automated findings from review-required cases.",
+        "Test API compatibility after a schema change."
+      ],
+      "expected_outputs": [
+        "fixtures/land_records.json",
+        "fixtures/expected_results.json",
+        "integration_test_report.json"
+      ],
+      "validation_checks": [
+        "Fixtures are synthetic and development-only.",
+        "API responses match the documented contract.",
+        "Expected results are asserted in automated tests."
+      ],
+      "safety_notes": [
+        "Do not connect experimental fixtures to an official registry or mutate authoritative records.",
+        "Keep real integrations disabled unless separately authorized and verified."
+      ],
+      "tags": [
+        "LANDSYNC",
+        "API",
+        "fixtures",
+        "regression-tests"
+      ]
+    }
+  ]
+}
